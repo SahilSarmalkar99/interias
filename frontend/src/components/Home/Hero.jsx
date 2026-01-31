@@ -47,7 +47,7 @@ const Hero = () => {
         </div>
       </div>
       {/* Middle part -1 */}
-      <div className="w-full min-h-screen px-24 pt-40 font-[font1] text-black">
+      <div className="w-full min-h-screen md:px-24 px-5 pt-20 md:pt-40 font-[font1] text-black">
         {/* TOP CONTENT ROW */}
         <Content1 />
 
@@ -63,13 +63,13 @@ const Hero = () => {
 
       <ExclusiveProjects />
 
-      <FeaturedProjects />
+      <FeaturedProjects isdisplayed={[true ,true ,true]}/>
 
       <Services />
       
       <Testimonials />
 
-      <Blogs />
+      <Blogs visibleCount={2}/>
 
       <FollowUs />
 

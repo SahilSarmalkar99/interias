@@ -28,20 +28,20 @@ const FollowUs = () => {
   }, []);
 
   return (
-    <section className="w-full px-35 py-20 text-black font-[font1] overflow-hidden">
+    <section className="w-full px-2 md:px-35 py-5 md:py-20 text-black font-[font1] overflow-hidden">
 
       {/* HEADER */}
-      <div className="grid grid-cols-[140px_1fr_480px] mb-20">
-        <div className="flex items-center gap-3 text-sm">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-[140px_1fr_480px] mb-20">
+        <div className="flex items-center gap-3 text-[20px] md:text-sm">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Follow Us</span>
         </div>
 
-        <h2 className="text-[30px] mt-4.5 ml-10 leading-tight tracking-tight max-w-[520px]">
+        <h2 className="text-[24px] md:text-[30px] md:mt-4.5 ml-2 md:ml-10 leading-tight font-[font4] tracking-tighter md:max-w-[520px]">
           Creative Moments <br /> Shared With the World.
         </h2>
 
-        <div className="text-sm mt-4 text-black/70 max-w-[320px] justify-self-end">
+        <div className="text-[16px] md:text-sm md:mt-4 leading-tight tracking-tight text-black/70 max-w-[320px] justify-self-end">
           Discover our process, projects and creativity
           on your favorite platforms.
         </div>
@@ -57,7 +57,7 @@ const FollowUs = () => {
           {[...socials, ...socials].map((img, i) => (
             <div
               key={i}
-              className="w-[260px] h-[260px] shrink-0 rounded-2xl overflow-hidden"
+              className="md:w-[260px] md:h-[260px] shrink-0 rounded-2xl overflow-hidden"
             >
               <img
                 src={img}

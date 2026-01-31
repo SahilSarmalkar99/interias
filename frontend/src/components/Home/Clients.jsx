@@ -30,10 +30,10 @@ const Clients = () => {
   }, []);
 
   return (
-    <section className="w-full py-32 px-24 font-[font1] overflow-hidden text-black">
+    <section className="w-full px-1 py-10 md:py-32 md:px-24 font-[font2] md:font-[font1] overflow-hidden text-black">
       
       {/* TITLE */}
-      <h2 className="text-[28px] mb-16">Our Clients</h2>
+      <h2 className="text-[28px] mb-10 md:mb-16">Our Clients</h2>
 
       {/* MARQUEE */}
       <div ref={marqueeRef} className="relative overflow-hidden">

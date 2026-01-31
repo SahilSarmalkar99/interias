@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="relative w-full px-24 pt-32 pb-10 text-white font-[font1] overflow-hidden">
+    <footer className="relative w-full px-6 md:px-12 lg:px-24 pt-24 md:pt-32 pb-10 text-white font-[font1] overflow-hidden">
 
       {/* BACKGROUND GRADIENT */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#2A2A2A] via-[#6A5A2A]/60 to-black z-0" />
@@ -8,19 +8,22 @@ const Footer = () => {
       {/* CONTENT */}
       <div className="relative z-10">
 
-        {/*  TOP  */}
-        <div className="flex justify-between items-start mb-24">
+        {/* TOP */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-20 md:mb-24">
 
           {/* LEFT BIG LOGO */}
-          <h1 className="text-[160px] leading-none font-semibold tracking-tight">
+          <h1 className="
+            text-[72px] sm:text-[96px] md:text-[120px] lg:text-[160px]
+            leading-none font-semibold tracking-tight
+          ">
             Intérias
           </h1>
 
           {/* RIGHT CONTENT */}
-          <div className="flex flex-col items-end gap-10">
+          <div className="flex flex-col items-start lg:items-end gap-10 w-full lg:w-auto">
 
             {/* NAV */}
-            <div className="flex gap-8 text-sm">
+            <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
               <span>About</span>
               <span>Projects</span>
               <span>Services</span>
@@ -43,7 +46,7 @@ const Footer = () => {
             </div>
 
             {/* LEGAL */}
-            <div className="flex gap-6 text-sm text-white/80">
+            <div className="flex flex-wrap gap-6 text-sm text-white/80">
               <span>Terms & Condition</span>
               <span>Privacy Policy</span>
             </div>
@@ -51,11 +54,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/*  DIVIDER  */}
+        {/* DIVIDER */}
         <div className="w-full h-px bg-white/15 mb-6" />
 
-        {/*  BOTTOM  */}
-        <div className="flex justify-between items-center text-sm text-white/70">
+        {/* BOTTOM */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-sm text-white/70">
           <span>©2025 All rights reserved.</span>
         </div>
 

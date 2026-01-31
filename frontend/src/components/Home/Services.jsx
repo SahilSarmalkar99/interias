@@ -38,23 +38,23 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="w-full text-black px-35 py-32 font-[font1]">
+    <section className="w-full text-black px-3 py-10 md:px-35 md:py-32 font-[font1]">
       {/* HEADER */}
-      <div className="grid grid-cols-[140px_1fr_480px] mb-32 items-start">
+      <div className="grid grid-cols-1 gap-10  md:grid-cols-[140px_1fr_480px] mb-32 items-start">
         {/* LEFT */}
-        <div className="flex items-center gap-3 text-[18px] mt-2">
+        <div className="flex items-center gap-3 text-2xl md:text-[18px] mt-2">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Services</span>
         </div>
 
         {/* CENTER */}
-        <h2 className="text-[40px] leading-tight tracking-tight max-w-[520px]">
+        <h2 className="text-[28px] md:text-[40px] leading-tight tracking-tight md:max-w-[520px] font-[font4]">
           Personalized Care. <br />
           Inspired Spaces.
         </h2>
 
         {/* RIGHT */}
-        <div className="text-sm text-black/70 max-w-[320px] justify-self-end">
+        <div className="text-[18px] leading-tight tracking-tighter md:text-sm text-black/70 md:max-w-[320px] md:justify-self-end">
           Creative solutions tailored for every style and every space.
           <div className="mt-4 flex items-center gap-2 text-black">
             <span>View Services</span>
@@ -64,21 +64,21 @@ const Services = () => {
       </div>
 
       {/* LIST */}
-      <div className="border-t border-black/10">
+      <div className="border-t border-black/10 ">
         {services.map((s) => (
           <div
             key={s.id}
-            className="group grid grid-cols-[140px_1fr_480px]
-                   items-center py-10 border-b border-black/10"
+            className="group grid grid-cols-1 md:grid-cols-[140px_1fr_480px]
+                   items-center  md:py-10 md:border-b border-black/10"
           >
             {/* NUMBER */}
             <div className="text-black/60 text-sm">( {s.id} )</div>
 
             {/* TEXT */}
-            <div className="max-w-[520px]">
+            <div className="md:max-w-[520px]">
               <h3 className="text-[28px] mb-4">{s.title}</h3>
 
-              <p className="text-black/70 leading-relaxed max-w-[420px]">
+              <p className="text-black/70 leading-relaxed md:max-w-[420px]">
                 {s.desc}
               </p>
 
@@ -91,8 +91,8 @@ const Services = () => {
             </div>
 
             {/* IMAGE */}
-            <div className="justify-self-end">
-              <div className="w-[380px] h-[240px] rounded-2xl overflow-hidden">
+            <div className="py-10 md:justify-self-end">
+              <div className="md:w-[380px] md:h-[240px] rounded-2xl overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.title}

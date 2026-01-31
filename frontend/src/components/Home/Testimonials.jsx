@@ -60,34 +60,34 @@ const Testimonials = () => {
   const t = testimonials[index];
 
   return (
-    <section className="w-full px-35 py-5 font-[font1] text-black tracking-tight leading-tight">
+    <section className="w-full px-2 md:px-35 md:py-5 font-[font1] text-black tracking-tight leading-tight">
 
       {/* HEADER */}
-      <div className="grid grid-cols-[1fr_2fr_1fr] mb-20">
-        <div className="flex items-center gap-3 text-[18px]">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-[1fr_2fr_1fr] mb-20">
+        <div className="flex items-center gap-3 text-[22px] md:text-[18px]">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Testimonials</span>
         </div>
 
-        <h2 className="text-[40px] leading-tight tracking-tight max-w-[520px]">
+        <h2 className="text-[24px]  md:text-[40px] leading-tight tracking-tighter font-[font4] md:max-w-[520px]">
           Praise, Partnerships, & <br />
           Real Results.
         </h2>
 
-        <p className="text-sm text-black/70 max-w-[320px] justify-self-end">
+        <p className="text-[18px] md:text-sm text-black/70 md:max-w-[320px] md:justify-self-end">
           Shaping visions into reality, we create experiences that resonate.
         </p>
       </div>
 
       {/* CARD */}
-      <div className="bg-[#F4F2EE] rounded-3xl p-3 h-80">
+      <div className="bg-[#F4F2EE] rounded-3xl  p-3 md:h-80">
         <div
           ref={cardRef}
-          className="grid grid-cols-[320px_1fr] gap-5 items-center"
+          className="grid md:grid-cols-[320px_1fr] gap-1 items-center"
         >
 
           {/* IMAGE */}
-          <div className="w-[250px] h-[270px] rounded-2xl overflow-hidden">
+          <div className="md:w-[250px] md:h-[270px] rounded-2xl overflow-hidden">
             <img
               src={t.img}
               alt={t.name}
@@ -97,12 +97,12 @@ const Testimonials = () => {
 
           {/* TEXT */}
           <div>
-            <p className="text-[22px] leading-relaxed mb-10 max-w-[720px]">
+            <p className="text-[22px] leading-tight md:leading-relaxed  mb-2 md:mb-10 max-w-[720px]">
               {t.text}
             </p>
 
-            <div className="font-medium">{t.name}</div>
-            <div className="text-sm text-black/60 mb-10">{t.location}</div>
+            <div className="font-medium ">{t.name}</div>
+            <div className="text-sm text-black/60 mb-5 md:mb-10">{t.location}</div>
 
             {/* ARROWS */}
             <div className="flex gap-4">

@@ -7,7 +7,7 @@ const Image1 = () => {
           <img
             src="https://framerusercontent.com/images/mHXkmW0Jfupllqyy8XPFTDe0k.jpg?scale-down-to=2048"
             alt="Interior"
-            className="w-full h-[520px] object-cover"
+            className="w-full md:h-[520px] object-cover"
           />
         </div>
     </div>

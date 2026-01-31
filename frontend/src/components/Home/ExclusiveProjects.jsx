@@ -61,26 +61,26 @@ const ExclusiveProjects = () => {
   };
 
   return (
-    <section className="w-full text-black px-35 py-32 font-[font1] overflow-hidden">
+    <section className="w-full text-black px-2 py-10 md:px-35 md:py-32 font-[font3] md:font-[font1] overflow-hidden">
 
       {/*  TOP ROW  */}
-      <div className="grid grid-cols-[1fr_2fr_1fr] items-start mb-20 mx-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:mb-10">
 
         {/* LEFT */}
-        <div className="flex items-center gap-3 text-lg">
+        <div className="flex items-center gap-3 text-[22px] md:text-lg">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Exclusive Projects</span>
         </div>
 
         {/* CENTER */}
-        <h2 className="text-[40px] leading-tight tracking-tight max-w-[520px] font-[font4]">
+        <h2 className="text-[24px] md:text-[40px] leading-tight tracking-tight font-[font2] md:max-w-[520px]">
           Boldly Rooted in Vision. <br />
           Exclusive In Execution.
         </h2>
 
         {/* RIGHT */}
         <div className="flex flex-col items-end">
-          <p className="text-sm text-black/70 max-w-[300px] mb-6 text-right">
+          <p className="text-sm text-black/70 max-w-[300px] mb-6 md:text-right">
             A visual library of interiors brought to life from
             blueprint to beauty.
           </p>
@@ -122,11 +122,11 @@ const ExclusiveProjects = () => {
                   isCenter ? "opacity-100" : "opacity-30"
                 }`}
               >
-                <div className="bg-[#F4F2EE] rounded-2xl p-4">
+                <div className="bg-[#F4F2EE] h-fit w-fit rounded-2xl p-4">
                   <img
                     src={p.img}
                     alt={p.title}
-                    className="rounded-xl h-[360px] w-full object-cover"
+                    className="rounded-xl h-[200px] w-[200px] md:h-[360px] md:w-full object-cover"
                   />
                 </div>
 

@@ -29,7 +29,7 @@ const stats = [
   },
 ];
 
-const ContentButton1 = () => {
+const ContentButton1 = ({isdisplayed = [true ,true ,true] , px=24 ,py=32 }) => {
   const sectionRef = useRef(null);
 
   useGSAP(
@@ -56,36 +56,43 @@ const ContentButton1 = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full  px-24 py-32 font-[font1]"
+      className={`w-full px-1 py-3 md:${px} md:${py} md:font-[font1] font-[font2]`}
     >
-      <div className="grid grid-cols-3 gap-24">
-        {stats.map((item, i) => (
-          <div key={i} className="space-y-4">
-            {/* NUMBER */}
-            <h3 className="text-[48px] font-semibold text-[#8A867B]">
-              <span
-                className="stat-number"
-                data-value={item.value}
-              >
-                0
-              </span>
-              {item.suffix}
-            </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-24">
+        
+        {stats.map((item, i) => {
+          
+          if (!isdisplayed[i]) return null;
 
-            {/* TITLE */}
-            <h4 className="text-[20px] font-medium">
-              {item.title}
-            </h4>
+          return (
+            <div key={i} className="md:space-y-4">
+              {/* NUMBER */}
+              <h3 className="text-[36px] md:text-[48px] font-semibold text-[#8A867B]">
+                <span
+                  className="stat-number"
+                  data-value={item.value}
+                >
+                  0
+                </span>
+                {item.suffix}
+              </h3>
 
-            {/* DESCRIPTION */}
-            <p className="text-[15px] leading-relaxed text-black/70 max-w-[320px]">
-              {item.desc}
-            </p>
-          </div>
-        ))}
+              {/* TITLE */}
+              <h4 className="text-[20px] font-medium">
+                {item.title}
+              </h4>
+
+              {/* DESCRIPTION */}
+              <p className="text-[14px] leading-relaxed text-black/70 max-w-[320px]">
+                {item.desc}
+              </p>
+            </div>
+          );
+        })}
+
       </div>
     </section>
   );
 };
-
 export default ContentButton1;
+
