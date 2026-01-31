@@ -28,7 +28,7 @@ const HeroImage = () => {
         ref={imgRef}
         src="https://framerusercontent.com/images/saxCf2i4lxd1XN4NFQTzPi5sA.jpg?scale-down-to=2048"
         alt="Hero Image"
-        className="absolute inset-0 w-full h-full object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0 bg-black/60"
       />
 
       {/* Blur Layer */}

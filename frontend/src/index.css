@@ -21,6 +21,10 @@
   src: url("../public/fonts/vQyevYAyHtARFwPqUzQGpnDs.woff2");
 }
 
-body{
-  /* background-color: black; */
+.contact-input {
+  @apply w-full px-4 py-3 rounded-xl
+         bg-white
+         text-black/80
+         placeholder:text-black/40
+         outline-none;
 }

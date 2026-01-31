@@ -16,7 +16,7 @@ const Card = () => {
   return (
     <div>
       <div className="ml-auto -mb-16" id="card">
-        <div className="bg-white/10 backdrop-blur-xl rounded-2xl  p-3 w-70 mb-10 border border-white/20">
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl  p-3  w-50 md:w-70 mb-10 border border-white/20">
           <img
             src="https://framerusercontent.com/images/k0CNoexHMcgDbzHXAkPIOGyk.png?scale-down-to=1024&width=1200&height=904"
             alt="Project"

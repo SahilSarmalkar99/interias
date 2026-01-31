@@ -39,7 +39,7 @@ const Hero = () => {
     <div>
       <div className="relative h-screen overflow-hidden" id="top">
         <HeroImage />
-        <div className="relative z-10 h-full flex justify-between items-end px-16 pb-12 text-white -mb-90">
+        <div className="relative z-10 h-full flex flex-col md:flex-row justify-between items-center md:items-end md:px-16 md:pb-12 px-2 py-10 text-white -mb-90">
           <LeftText />
 
           {/* RIGHT CARD */}

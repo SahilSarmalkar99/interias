@@ -39,10 +39,10 @@ const LeftText = () => {
 
   return (
     <div>
-      <div className="max-w-3xl">
+      <div className="max-w-3xl flex flex-col mt-20">
         <h1
           ref={textRef}
-          className="text-[65px] leading-tight font-semibold font-[font1]"
+          className="text-[32px] md:text-[65px] leading-tight tracking-tighter font-[font1]"
         >
           <span className="word">Where</span>{" "}
           <span className="word">Aesthetics</span>{" "}
@@ -52,7 +52,7 @@ const LeftText = () => {
           <span className="word">Living</span>
         </h1>
 
-        <p className="mt-6 max-w-xl font-[font5] text-white text-base" id="para">
+        <p className="mt-6 max-w-xl font-[font5] text-gray- text-base font-bold" id="para">
           We create interiors that blend timeless elegance with modern
           functionality, reflecting your story and lifestyle. Let’s build
           something beautiful together.
