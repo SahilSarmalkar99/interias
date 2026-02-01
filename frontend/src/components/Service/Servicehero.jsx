@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-
 const Servicehero = () => {
   const imgRef = useRef(null);
 
@@ -15,7 +14,7 @@ const Servicehero = () => {
         filter: "grayscale(0%) brightness(1)",
         duration: 3,
         ease: "power3.out",
-      }
+      },
     );
   }, []);
 
@@ -31,7 +30,7 @@ const Servicehero = () => {
         stagger: 0.2,
         delay: 0.3,
         ease: "power3.out",
-      }
+      },
     );
   }, []);
 
@@ -50,17 +49,16 @@ const Servicehero = () => {
       {/* CONTENT */}
       <div className="relative z-10 h-full flex items-end p-5">
         <div className="max-w-[1200px] w-full flex flex-col md:flex-row md:justify-between gap-5 ">
-
           {/* LEFT */}
           <h1 className="about text-white text-[28px] md:text-[60px] font-semibold leading-none">
-            Projects
+            Our Services
           </h1>
 
           {/* RIGHT */}
           <p className="about max-w-md text-white/80 text-base leading-tight font-[font3] ">
-            From a small beginning to a bold vision, we design spaces that shape lives.
+            Explore our tailored design services crafted to reflection comfort,
+            beauty, and purpose.
           </p>
-          
         </div>
       </div>
     </section>

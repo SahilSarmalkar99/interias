@@ -53,12 +53,12 @@ const BlogsHero = () => {
 
           {/* LEFT */}
           <h1 className="about text-white text-[28px] md:text-[60px] font-semibold leading-none">
-            Projects
+            Blogs
           </h1>
 
           {/* RIGHT */}
           <p className="about max-w-md text-white/80 text-base leading-tight font-[font3] ">
-            From a small beginning to a bold vision, we design spaces that shape lives.
+            Explore the art through curated content, expert perspectives, and bts from projects
           </p>
           
         </div>
