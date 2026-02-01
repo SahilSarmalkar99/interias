@@ -7,18 +7,18 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
-    value: 120,
+    value: 900,
     suffix: "+",
     title: "Homes transformed",
     desc:
       "From apartments to luxurious villas, each project is a unique story of style.",
   },
   {
-    value: 75,
+    value: 1000,
     suffix: "+",
-    title: "Commercial spaces",
+    title: "Unique Ideas",
     desc:
-      "Innovative designs that enhance functionality while maintaining aesthetic.",
+      "We design intelligent commercial environments that optimise workflow, enhance user experience, and reflect your brand’s identity through thoughtful aesthetics.",
   },
   {
     value: 2000,

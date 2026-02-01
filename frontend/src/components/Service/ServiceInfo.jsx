@@ -4,45 +4,45 @@ import ContentButton1 from "../Home/ContentButton1";
 const servicesData = [
   {
     step: "001",
-    title: "Residential Design",
+    title: "Interior Design",
     description:
-      "Complete home interiors that reflect your style — functional, beautiful, and deeply personal.",
+      "Complete interior solutions that balance aesthetics, functionality, and personal expression—designed to reflect how you live and work.",
     stat: "90+",
     statLabel: "Transformed Spaces",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
   },
   {
     step: "002",
-    title: "Commercial Interiors",
+    title: "Turnkey Interiors",
     description:
-      "Designing inspiring workspaces that balance productivity, brand identity, and comfort.",
+      "End-to-end interior execution—from design to delivery—handled seamlessly with precision, quality, and accountability.",
     stat: "40+",
     statLabel: "Workspaces Designed",
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
   },
   {
     step: "003",
-    title: "Hospitality Design",
+    title: "Civil Work",
     description:
-      "Immersive hospitality spaces crafted to elevate guest experience and storytelling.",
+      "Structural modifications and foundational work executed with care, accuracy, and long-term durability in mind.",
     stat: "25+",
     statLabel: "Hospitality Projects",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
   },
   {
     step: "004",
-    title: "Furniture & Styling",
+    title: "Modular Kitchens",
     description:
-      "Custom furniture and curated styling that completes each space with intention.",
+      "Ergonomic, space-efficient modular kitchens crafted for everyday convenience, durability, and timeless appeal.",
     stat: "120+",
     statLabel: "Custom Pieces",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
   },
   {
     step: "005",
-    title: "Renovation & Remodeling",
+    title: "Furniture & Custom Solutions",
     description:
-      "Thoughtful renovations that breathe new life into existing spaces.",
+      "Bespoke furniture and tailored design elements that complete spaces with comfort, character, and intent.",
     stat: "60+",
     statLabel: "Renovations",
     image: "https://images.unsplash.com/photo-1586105251261-72a756497a11",

@@ -7,7 +7,7 @@ const navRight = [
   { label: "About", path: "/about" },
   { label: "Projects", path: "/projects" },
   { label: "Services", path: "/services" },
-  { label: "Blogs", path: "/blogs" },
+  // { label: "Blogs", path: "/blogs" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -59,7 +59,7 @@ const Nav = () => {
       gsap.fromTo(
         mobileMenuRef.current,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
       );
     } else {
       gsap.to(topBar.current, { y: 0, rotate: 0, duration: 0.3 });
@@ -74,9 +74,10 @@ const Nav = () => {
       <nav
         ref={navRef}
         className="fixed top-0 left-0 w-full z-50
-                   flex items-center justify-between
-                   px-6 py-4 font-[font1]
-                   text-white"
+             flex items-center justify-between
+             px-6 py-4 font-[font1] text-white
+             bg-black/30 backdrop-blur-xl
+             border-b border-white/10"
       >
         {/* LOGO */}
         <NavLink to="/">

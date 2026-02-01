@@ -19,8 +19,8 @@ const About = () => {
       <Clients />
       <GoalsSection />
       <Process />
-      <Awards />
-      <Team />
+      {/* <Awards /> */}
+      {/* <Team /> */}
       <ContactSection />
       <Footer />
     </div>

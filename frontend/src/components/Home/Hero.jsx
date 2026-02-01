@@ -14,10 +14,9 @@ import ExclusiveProjects from "./ExclusiveProjects";
 import FeaturedProjects from "./FeaturedProjects";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
-import Blogs from "./Blogs";
-import FollowUs from "./FollowUs";
-import CTASection from "./ContactSection";
+import WhyUs from "./WhyUs";
 import ContactSection from "./ContactSection";
+import Offer from "./Offer";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
@@ -69,9 +68,9 @@ const Hero = () => {
       
       <Testimonials />
 
-      <Blogs visibleCount={2}/>
+      <Offer />
 
-      <FollowUs />
+      <WhyUs />
 
       <ContactSection />
     </div>

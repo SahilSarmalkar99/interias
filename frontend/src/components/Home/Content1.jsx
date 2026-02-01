@@ -21,8 +21,7 @@ const Content1 = () => {
           {/* RIGHT: DESCRIPTION */}
           <div className="max-w-[360px]">
             <p className="text-[18px]  md:text-[16px] leading-tight tracking-tighter text-black/80">
-              Our design philosophy blends story, structure, and soul to craft
-              environments.
+              Our approach weaves innovation, intention, and craftsmanship to create spaces that truly resonate.
             </p>
 
             <div className="mt-4 flex items-center gap-2 text-xl sm:text-black md:text-sm">

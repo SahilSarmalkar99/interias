@@ -13,10 +13,10 @@ const Footer = () => {
 
           {/* LEFT BIG LOGO */}
           <h1 className="
-            text-[72px] sm:text-[96px] md:text-[120px] lg:text-[160px]
+            text-[60px] sm:text-[30px] md:text-[40px] lg:text-[70px]
             leading-none font-semibold tracking-tight
           ">
-            Intérias
+            Interior Concept
           </h1>
 
           {/* RIGHT CONTENT */}
@@ -33,7 +33,7 @@ const Footer = () => {
 
             {/* SOCIALS */}
             <div className="flex gap-4">
-              {["IG", "FB", "X", "IN"].map((item, i) => (
+              {["FB",  "IN"].map((item, i) => (
                 <div
                   key={i}
                   className="w-10 h-10 rounded-full bg-white/80 text-black

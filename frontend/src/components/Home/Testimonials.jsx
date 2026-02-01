@@ -2,31 +2,33 @@ import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-
 const testimonials = [
   {
     img: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e",
-    text:
-      "Fantastic service! They turned my space into a stunning oasis that truly reflects my style. I'm so happy",
-    name: "Kira Revonda",
-    location: "Seoul",
+    text: "I did my 1bhk home interior from him. I am happy with my home interior.They made me part of every selection process and take in consideration my new add-ons.",
+    name: "Lata Kalugade",
   },
   {
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-    text:
-      "An exceptional experience from start to finish. The attention to detail was incredible.",
-    name: "Daniel Moore",
-    location: "New York",
+    text: "Interior Concepts is a complete one stop solution for interior designing – providing end to end planning, designing and execution of all the works as a single window. They gave very good suggestions as per our requirement & budget and completed all the work very smoothly in the committed time. The team headed by Mr. Ajay & Ms. Shruti is excellent and the work done is of excellent quality & finishing.",
+    name: "Bhagyashree Minocha",
   },
   {
     img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    text:
-      "They understood our vision perfectly and delivered beyond expectations.",
-    name: "Ariana Wells",
-    location: "London",
+    text: "Overall satisfied with the quality of material used & the craftsmanship. His suggestions were helpful & well implemented.",
+    name: "Prathamesh Mhatre",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    text: "The work was done in a very professional manner. The finishing was good. Promised design and material was delivered. After sales support was also good.",
+    name: "Divya Krishna",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+    text: "Interior Concepts has done many works at my home. Honest, budget friendly and awesome quality. Thanks for great work.",
+    name: "Raj Saxena",
   },
 ];
-
 
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
@@ -43,7 +45,7 @@ const Testimonials = () => {
         gsap.fromTo(
           cardRef.current,
           { opacity: 0, x: 40 },
-          { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }
+          { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" },
         );
       },
     });
@@ -61,7 +63,6 @@ const Testimonials = () => {
 
   return (
     <section className="w-full px-2 md:px-35 md:py-5 font-[font1] text-black tracking-tight leading-tight">
-
       {/* HEADER */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[1fr_2fr_1fr] mb-20">
         <div className="flex items-center gap-3 text-[22px] md:text-[18px]">
@@ -80,14 +81,13 @@ const Testimonials = () => {
       </div>
 
       {/* CARD */}
-      <div className="bg-[#F4F2EE] rounded-3xl  p-3 md:h-80">
+      <div className="bg-[#F4F2EE] rounded-3xl p-4 md:p-8 overflow-hidden">
         <div
           ref={cardRef}
-          className="grid md:grid-cols-[320px_1fr] gap-1 items-center"
+          className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 items-start min-w-0"
         >
-
           {/* IMAGE */}
-          <div className="md:w-[250px] md:h-[270px] rounded-2xl overflow-hidden">
+          <div className="w-full h-[220px] md:w-[260px] md:h-[280px] rounded-2xl overflow-hidden shrink-0">
             <img
               src={t.img}
               alt={t.name}
@@ -97,12 +97,14 @@ const Testimonials = () => {
 
           {/* TEXT */}
           <div>
-            <p className="text-[22px] leading-tight md:leading-relaxed  mb-2 md:mb-10 max-w-[720px]">
+            <p className="text-[16px] md:text-[20px] leading-relaxed mb-4 md:mb-10 max-w-full break-words">
               {t.text}
             </p>
 
-            <div className="font-medium ">{t.name}</div>
-            <div className="text-sm text-black/60 mb-5 md:mb-10">{t.location}</div>
+            <div className="font-medium">{t.name}</div>
+            <div className="text-sm text-black/60 mb-6 md:mb-10">
+              {t.location}
+            </div>
 
             {/* ARROWS */}
             <div className="flex gap-4">
@@ -120,10 +122,8 @@ const Testimonials = () => {
               </button>
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
   );
 };

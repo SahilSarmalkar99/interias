@@ -1,6 +1,6 @@
 const ContactSection = () => {
   return (
-    <section className="w-full px-2 md:px-35 py-10 md:py-10 text-black font-[font1]">
+    <section className="w-full px-6 md:px-35 py-10 md:py-10 text-black font-[font1]">
       {/*  HEADER  */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-[140px_1fr_420px] items-start mb-24">
         {/* LEFT */}
@@ -10,13 +10,13 @@ const ContactSection = () => {
         </div>
 
         {/* CENTER */}
-        <h2 className="text-[24px] md:text-[40px] font-[font5] ml-2 md:ml-10 leading-tight tracking-tighter md:max-w-[520px]">
+        <h2 className="text-2xl md:text-3xl leading-tight tracking-tighter">
           Together, We Shape <br />
           the Extraordinary
         </h2>
 
         {/* RIGHT */}
-        <p className="text-[18px] md:text-[16px] text-black/70 tracking-tighter leading-tight mt-2 max-w-[320px] justify-self-end">
+        <p className="text-[18px] md:text-[16px] text-black/70 tracking-tighter leading-tight mt-2 max-w-[320px] md:justify-self-end">
           Interested in working with us? Let’s bring your space to life.
         </p>
       </div>

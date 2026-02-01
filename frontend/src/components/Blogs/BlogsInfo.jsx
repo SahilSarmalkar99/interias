@@ -1,5 +1,5 @@
 import React from "react";
-import Blogs from "../Home/Blogs";
+import Blogs from "../Blogs";
 
 const BlogsInfo = () => {
   return (

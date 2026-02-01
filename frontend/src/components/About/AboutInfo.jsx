@@ -8,19 +8,22 @@ const AboutInfo = () => {
         {/* LEFT CONTENT */}
         <div className="mt-2 flex flex-col  gap-5 ">
           <h2 className="text-2xl md:text-4xl font-[font4] leading-tight tracking-tighter max-w-xl">
-            Rooted in Clear Vision. Driven by Detail.
+            Designing Spaces That Elevate Everyday Living
           </h2>
 
           <p className="text-black/70 max-w-xl leading-tight font-[font4]">
-            Since day one, we’ve believed that spaces and people shape each
-            other. What started as a small design studio has grown into a
-            full-service interior design firm.
+            <span className="font-bold text-black text-2xl mr-1">
+              Interior Concept
+            </span>
+            is a leading interior design studio in Mira Road, focused on
+            creating spaces that are visually refined, deeply personal, and
+            highly functional. We believe thoughtful design enhances everyday
+            living, and every project we undertake reflects the unique style,
+            needs, and aspirations of the people who inhabit it.
           </p>
 
           <p className="text-black/70 max-w-xl leading-tight font-[font4]">
-            Our passion for creativity, functionality, and craftsmanship drives
-            every project. Every project we undertake is crafted with precision,
-            attention to detail, and a deep understanding of our clients’ needs.
+            From modern minimalism to timeless elegance, we offer curated design ideas and innovative solutions that balance creativity with practicality. More than just designing interiors, we guide homeowners and professionals through every decision—transforming spaces into inspiring environments that feel intentional, comfortable, and truly their own.
           </p>
 
           {/* STATS */}

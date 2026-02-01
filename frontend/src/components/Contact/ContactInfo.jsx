@@ -1,10 +1,32 @@
 import React, { useState } from "react";
-import { Mail, MapPin, Phone, Plus, Minus } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Plus,
+  Minus,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 
 const contactInfo = [
-  { text: "info@abc.com", icon: Mail },
-  { text: "Lane London EC1R OBJ United Kingdom", icon: MapPin },
-  { text: "+1-555-44-456", icon: Phone },
+  {
+    text: "ajay.interiorconcepts@gmail.com",
+    icon: Mail,
+  },
+  {
+    text: "Interior concepts , Office no 4, first floor Ramdev Ritu height, opp Aviva JP North, vinay nagar Mira road East Thane",
+    icon: MapPin,
+  },
+  {
+    text: "(+91) 093727 70662",
+    icon: Phone,
+  },
+  {
+    type: "social",
+    text: "Follow Us",
+    icons: [Facebook, Instagram],
+  },
 ];
 
 const faqData = [
@@ -42,20 +64,50 @@ const ContactInfo = () => {
     <section className="bg-white px-6 md:px-16 lg:px-24 py-20 font-[font1]">
       {/* CONTACT  */}
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-40">
-        
         {/* LEFT */}
         <div className="space-y-6">
           {contactInfo.map((item, index) => {
+            // FOLLOW US
+            if (item.type === "social") {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-wrap items-center gap-4 bg-[#F3F2EF] rounded-2xl px-6 py-4"
+                >
+                  <span className="text-black/80 font-medium">{item.text}</span>
+
+                  <div className="flex gap-4">
+                    {item.icons.map((SocialIcon, i) => (
+                      <div
+                        key={i}
+                        className="w-11 h-11 rounded-xl bg-[#B8B2A5] flex items-center justify-center
+                         hover:scale-110 transition cursor-pointer"
+                      >
+                        <SocialIcon
+                          size={18}
+                          className="text-white stroke-[1.8]"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            }
+
+            // NORMAL CONTACT INFO
             const Icon = item.icon;
             return (
-              <div
-                key={index}
-                className="flex items-center gap-4 bg-[#F3F2EF] rounded-2xl px-6 py-4"
-              >
-                <div className="w-11 h-11 rounded-xl bg-[#B8B2A5] flex items-center justify-center">
+              <div className="flex items-start gap-4 bg-[#F3F2EF] rounded-2xl px-4 py-4">
+                <div
+                  className="w-12 h-12 md:w-16 md:h-16 rounded-xl bg-[#B8B2A5] 
+                  flex items-center justify-center shrink-0"
+                >
                   <Icon size={18} className="text-white" />
                 </div>
-                <span className="text-black/80">{item.text}</span>
+
+                <span className="text-black/80 text-sm md:text-base break-all min-w-0">
+                  {item.text}
+                </span>
               </div>
             );
           })}
@@ -64,7 +116,7 @@ const ContactInfo = () => {
           <img
             src="https://framerusercontent.com/images/r3XRxCn6TG0opmqpcRDGGHkRfH8.jpg?scale-down-to=1024&width=3458&height=2456"
             alt="Interior"
-            className="w-full rounded-3xl object-cover mt-6"
+            className="w-full lg:h-[30vh] rounded-3xl object-cover mt-6"
           />
         </div>
 
@@ -109,7 +161,9 @@ const ContactInfo = () => {
           </div>
 
           <h2 className="text-4xl font-medium leading-tight mb-6">
-            Looking for Clarity?<br />We're Here to Help
+            Looking for Clarity?
+            <br />
+            We're Here to Help
           </h2>
 
           <p className="text-black/70 max-w-sm">
@@ -128,9 +182,7 @@ const ContactInfo = () => {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex justify-between items-center"
                 >
-                  <span className="text-lg font-medium">
-                    {item.question}
-                  </span>
+                  <span className="text-lg font-medium">{item.question}</span>
                   <span className="w-8 h-8 rounded-full bg-[#B8B2A5] flex items-center justify-center">
                     {isOpen ? (
                       <Minus size={16} className="text-white" />
