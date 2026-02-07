@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import img from "../../assets/bg/bg.jpg"
 
 const HeroImage = () => {
   const imgRef = useRef(null);
@@ -26,7 +27,7 @@ const HeroImage = () => {
     <div className="absolute inset-0">
       <img
         ref={imgRef}
-        src="https://framerusercontent.com/images/saxCf2i4lxd1XN4NFQTzPi5sA.jpg?scale-down-to=2048"
+        src={img}
         alt="Hero Image"
         className="absolute inset-0 w-full h-full object-cover z-0 bg-black/60"
       />

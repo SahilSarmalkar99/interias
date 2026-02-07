@@ -38,11 +38,11 @@ const Hero = () => {
     <div>
       <div className="relative h-screen overflow-hidden" id="top">
         <HeroImage />
-        <div className="relative z-10 h-full flex flex-col md:flex-row justify-between items-center md:items-end md:px-16 md:pb-12 px-2 py-10 text-white -mb-90">
+        <div className="relative z-10 h-full flex flex-col md:flex-row justify-center items-center md:items-end md:px-16 md:pb-12 px-2 py-10 text-white mt-50 md:mt-0">
           <LeftText />
 
           {/* RIGHT CARD */}
-          <Card />
+          {/* <Card /> */}
         </div>
       </div>
       {/* Middle part -1 */}

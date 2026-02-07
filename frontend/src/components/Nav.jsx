@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import img from "../assets/company-logo/text.png"
 
 const navRight = [
   { label: "About", path: "/about" },
@@ -82,9 +83,9 @@ const Nav = () => {
         {/* LOGO */}
         <NavLink to="/">
           <img
-            src="https://framerusercontent.com/images/vcNmC26PGrasLFIzBNqdfWZpzQ.svg"
+            src={img}
             alt="logo"
-            width={120}
+            className="w-[200px] md:w-[240px] h-auto"
           />
         </NavLink>
 

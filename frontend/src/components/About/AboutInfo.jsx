@@ -16,7 +16,7 @@ const AboutInfo = () => {
 
           <p className="text-black/70 max-w-xl leading-tight font-[font4]">
             <span className="font-bold text-black text-2xl mr-1">
-              Interior Concept
+              Interior Concepts
             </span>
             is a leading interior design studio in Mira Road, focused on
             creating spaces that are visually refined, deeply personal, and

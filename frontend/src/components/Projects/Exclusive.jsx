@@ -5,19 +5,19 @@ import img3 from "../../assets/kitchen/kitchen4.jpeg";
 
 const projectsData = [
   {
-    title: "Coastal Serenity",
+    title: "Modern Living Room with Soft Blue Accents",
     year: "2024",
     image: img1,
     tags: ["Coastal Calm", "Nature"],
   },
   {
-    title: "Azure Hallway",
+    title: "Contemporary Living Room Inspired by Coastal Calm",
     year: "2025",
     image: img2,
     tags: ["Oceanic", "Natural Light"],
   },
   {
-    title: "Urban Tranquility",
+    title: "Elegant Living Space with Natural Light & Coastal Tones",
     year: "2024",
     image: img3,
     tags: ["Minimalism", "Natural"],
@@ -67,10 +67,10 @@ const Exclusive = () => {
                 <h3 className="text-lg font-medium mb-1">{project.title}</h3>
 
                 {/* YEAR */}
-                <p className="text-black/60 text-sm mb-4">{project.year}</p>
+                {/* <p className="text-black/60 text-sm mb-4">{project.year}</p> */}
 
                 {/* TAGS */}
-                <div className="flex flex-wrap gap-2">
+                {/* <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
@@ -81,7 +81,7 @@ const Exclusive = () => {
                       {tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

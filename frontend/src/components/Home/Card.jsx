@@ -23,9 +23,8 @@ const Card = () => {
             className="rounded-xl"
           />
           <div className="mt-4 flex justify-between items-center">
-            <span className="text-xl font-[font4]">Azure Hallway</span>
-            <span className="text-xl">→</span>
-          </div>
+            <span className="text-xl font-[font1] uppercase ">Interior Concepts</span>
+          </div> 
         </div>
       </div>
     </div>

@@ -7,17 +7,17 @@ import img3 from "../../assets/room/room3.jpeg";
 
 const projects = [
   {
-    title: "Azure Hallway",
+    title: "Minimalist Modular Kitchen with Neutral Elegance",
     year: "2025",
     img: img1,
   },
   {
-    title: "Coastal Serenity",
+    title: "Modern Living Room with Soft Blue Accents",
     year: "2024",
     img: img2,
   },
   {
-    title: "Modern Haven",
+    title: "Serene Luxury Living Room with Spiritual Accent",
     year: "2023",
     img: img3,
   },
@@ -137,19 +137,29 @@ const ExclusiveProjects = () => {
                 key={i}
                 ref={i === 0 ? cardRef : null}
                 className={`shrink-0 transition-opacity duration-500
-                  w-[260px] sm:w-[320px] md:w-[480px]
-                  ${isCenter ? "opacity-100" : "opacity-30"}
+                 w-[260px] sm:w-[320px] md:w-[420px]
+                 aspect-square
+                 ${isCenter ? "opacity-100" : "opacity-30"}
                 `}
               >
-                <div className="bg-[#F4F2EE] rounded-2xl p-4">
-                  <img src={project.img} />
-                  <h3>{project.title}</h3>
+                <div className="bg-[#F4F2EE] rounded-2xl p-4 w-full h-full flex flex-col">
+                  <div className="flex-1 overflow-hidden rounded-xl">
+                    <img
+                      src={project.img}
+                      className="w-full h-full object-cover"
+                      alt={project.title}
+                    />
+                  </div>
+
+                  <h3 className="mt-3 text-base font-medium">
+                    {project.title}
+                  </h3>
                 </div>
 
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <h3 className="text-lg font-medium">{p.title}</h3>
                   <p className="text-sm opacity-50">{p.year}</p>
-                </div>
+                </div> */}
               </div>
             );
           })}

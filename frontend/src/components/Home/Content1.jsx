@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Content1 = () => {
   return (
@@ -24,10 +25,12 @@ const Content1 = () => {
               Our approach weaves innovation, intention, and craftsmanship to create spaces that truly resonate.
             </p>
 
+            <Link to="/about" >
             <div className="mt-4 flex items-center gap-2 text-xl sm:text-black md:text-sm">
               <span>About Us</span>
               <span className="text-lg">↗</span>
             </div>
+            </Link>
           </div>
         </div>
     </div>

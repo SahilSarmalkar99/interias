@@ -6,6 +6,7 @@ import electrical from "../../assets/bedroom/bedroom3.jpeg";
 import wall from "../../assets/door/door.jpeg";
 import ceiling from "../../assets/ceiling/ceiling.jpeg";
 import civil from "../../assets/shop/shop1.jpeg";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -86,10 +87,12 @@ const Services = () => {
         {/* RIGHT */}
         <div className="text-[18px] leading-tight tracking-tighter md:text-sm text-black/70 md:max-w-[320px] md:justify-self-end">
           Creative solutions tailored for every style and every space.
+          <Link to = "/services">
           <div className="mt-4 flex items-center gap-2 text-black">
             <span>View Services</span>
             <span>↗</span>
           </div>
+          </Link>
         </div>
       </div>
 

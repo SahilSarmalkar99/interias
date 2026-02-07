@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ContactSection = () => {
   return (
     <section className="w-full px-6 md:px-35 py-10 md:py-10 text-black font-[font1]">
@@ -84,10 +86,12 @@ const ContactSection = () => {
           </p>
 
           {/* CTA (SMALLER) */}
-          <div className="flex items-center gap-2 text-sm font-medium cursor-pointer">
-            <span>Contact Us</span>
-            <span>↗</span>
-          </div>
+          <Link to="/contact">
+            <div className="flex items-center gap-2 text-sm font-medium cursor-pointer">
+              <span>Contact Us</span>
+              <span>↗</span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

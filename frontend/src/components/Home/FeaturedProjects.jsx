@@ -3,32 +3,33 @@ import img2 from "../../assets/room/room9.jpeg";
 import img3 from "../../assets/washroom/washroom.jpeg";
 import img4 from "../../assets/room/room3.jpeg";
 import img5 from "../../assets/bedroom/bedroom6.jpeg";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
-    title: "Nordic Light Loft",
+    title: "Modern Home Interior Design",
     img: img1,
-    tags: ["Scandinavian", "Functional Elegance"],
+    tags: ["Living Room Design", "Minimalist Design"],
   },
   {
-    title: "Redwood Horizon",
+    title: "Sophisticated Modern Home Interiors",
     img: img2,
-    tags: ["Timber Architecture", "Nature Immersion"],
+    tags: ["Luxury Interior", "Modern Interior"],
   },
   {
-    title: "Atelier Noir",
+    title: "Minimalist Bathroom Design",
     img: img3,
-    tags: ["Monochrome", "Industrial Chic"],
+    tags: ["Marble Flooring", "Bathroom Design"],
   },
   {
-    title: "Noir Cultura Studio",
+    title: "Serene Luxury Living Room with Spiritual Accent",
     img: img4,
-    tags: ["Monochrome", "Industrial Chic"],
+    tags: ["Luxury Living Room", "Spiritual Design"],
   },
   {
-    title: "Maison Éclat Studio",
+    title: "Modern Bedroom Interior with Organic Wall Design",
     img: img5,
-    tags: ["Monochrome", "Industrial Chic"],
+    tags: ["Minimal Bedroom", "Interior Styling"],
   },
 ];
 
@@ -63,11 +64,12 @@ const FeaturedProjects = ({
             Discover our range of interior designs that turn ideas into stunning
             spaces!
           </p>
-
+          <Link to="/projects">
           <div className="mt-4 flex items-center gap-2  text-black">
             <span>View Projects</span>
             <span className="text-lg">↗</span>
           </div>
+          </Link>
         </div>
       </div>
 
