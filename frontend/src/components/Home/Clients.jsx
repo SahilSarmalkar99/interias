@@ -6,7 +6,7 @@ import img2 from "../../assets/logos/AxisSecurities.jpg";
 import img3 from "../../assets/logos/collection.png";
 import img4 from "../../assets/logos/Guess.png";
 import img5 from "../../assets/logos/HDBFinancialServices.png";
-import img6 from "../../assets/logos/HDFClife.jpg";
+import img6 from "../../assets/logos/HDFCLife.jpg";
 import img7 from "../../assets/logos/Hindalco.webp";
 import img8 from "../../assets/logos/KanungoGroup.webp";
 import img9 from "../../assets/logos/Kipling.png";
