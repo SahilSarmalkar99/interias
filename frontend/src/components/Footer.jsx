@@ -18,7 +18,7 @@ const Footer = () => {
             leading-none font-semibold tracking-tight
           "
           >
-            Interior Concept
+            Interior Concepts
           </h1>
 
           {/* RIGHT CONTENT */}
