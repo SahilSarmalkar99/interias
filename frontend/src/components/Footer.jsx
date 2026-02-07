@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="relative w-full px-6 md:px-12 lg:px-24 pt-24 md:pt-32 pb-10 text-white font-[font1] overflow-hidden">
@@ -24,11 +25,10 @@ const Footer = () => {
 
             {/* NAV */}
             <div className="flex flex-wrap gap-x-8 gap-y-4 text-sm">
-              <span>About</span>
-              <span>Projects</span>
-              <span>Services</span>
-              <span>Blog</span>
-              <span>Contact</span>
+              <NavLink to={"/about"}> <span>About</span> </NavLink>
+              <NavLink to={"/projects"}><span>Projects</span> </NavLink>
+              <NavLink to={"/services"}><span>Services</span> </NavLink>
+              <NavLink to={"/contact"}><span>Contact</span> </NavLink>
             </div>
 
             {/* SOCIALS */}

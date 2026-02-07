@@ -1,22 +1,25 @@
 import React from "react";
+import img1 from "../../assets/room/room7.jpeg";
+import img2 from "../../assets/bedroom/bedroom6.jpeg";
+import img3 from "../../assets/kitchen/kitchen4.jpeg";
 
 const projectsData = [
   {
     title: "Coastal Serenity",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+    image: img1,
     tags: ["Coastal Calm", "Nature"],
   },
   {
     title: "Azure Hallway",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28",
+    image: img2,
     tags: ["Oceanic", "Natural Light"],
   },
   {
     title: "Urban Tranquility",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb",
+    image: img3,
     tags: ["Minimalism", "Natural"],
   },
 ];

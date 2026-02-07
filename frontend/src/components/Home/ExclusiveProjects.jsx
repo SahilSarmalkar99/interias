@@ -1,59 +1,78 @@
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
+import { useRef, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import img1 from "../../assets/kitchen/kitchen4.jpeg";
+import img2 from "../../assets/room/room7.jpeg";
+import img3 from "../../assets/room/room3.jpeg";
 
 const projects = [
   {
     title: "Azure Hallway",
     year: "2025",
-    img: "https://framerusercontent.com/images/Fn4yH7RStairs.jpg",
+    img: img1,
   },
   {
     title: "Coastal Serenity",
     year: "2024",
-    img: "https://framerusercontent.com/images/mHXkmW0Jfupllqyy8XPFTDe0k.jpg",
+    img: img2,
   },
   {
     title: "Modern Haven",
     year: "2023",
-    img: "https://framerusercontent.com/images/saxCf2i4lxd1XN4NFQTzPi5sA.jpg",
+    img: img3,
   },
 ];
 
-// duplicate for infinite illusion
-const loopProjects = [...projects, ...projects];
-
-const CARD_WIDTH = 520;
+// duplicate for infinite loop illusion
+const loopProjects = [...projects, ...projects, ...projects];
 
 const ExclusiveProjects = () => {
   const trackRef = useRef(null);
-  const indexRef = useRef(1); 
+  const cardRef = useRef(null);
+
+  const startIndex = projects.length; // middle copy
+  const indexRef = useRef(startIndex);
+  const cardWidthRef = useRef(0);
+  const [activeIndex, setActiveIndex] = useState(startIndex);
+
+  // calculate card width dynamically
+  useLayoutEffect(() => {
+    if (cardRef.current) {
+      cardWidthRef.current =
+        cardRef.current.offsetWidth +
+        parseInt(getComputedStyle(cardRef.current).marginRight || 0);
+    }
+  }, []);
 
   useGSAP(() => {
     gsap.set(trackRef.current, {
-      x: -CARD_WIDTH,
+      x: -startIndex * cardWidthRef.current,
     });
   }, []);
 
   const slide = (dir) => {
     indexRef.current += dir;
+    setActiveIndex(indexRef.current);
 
     gsap.to(trackRef.current, {
-      x: -indexRef.current * CARD_WIDTH,
-      duration: 1.1,
+      x: -indexRef.current * cardWidthRef.current,
+      duration: 1,
       ease: "power3.out",
       onComplete: () => {
-        // seamless reset
-        if (indexRef.current >= projects.length + 1) {
-          indexRef.current = 1;
+        const total = projects.length;
+
+        // silent reposition ONLY for GSAP, NOT for state
+        if (indexRef.current >= total * 2) {
+          indexRef.current -= total;
           gsap.set(trackRef.current, {
-            x: -CARD_WIDTH,
+            x: -indexRef.current * cardWidthRef.current,
           });
         }
-        if (indexRef.current <= 0) {
-          indexRef.current = projects.length;
+
+        if (indexRef.current < total) {
+          indexRef.current += total;
           gsap.set(trackRef.current, {
-            x: -projects.length * CARD_WIDTH,
+            x: -indexRef.current * cardWidthRef.current,
           });
         }
       },
@@ -61,31 +80,35 @@ const ExclusiveProjects = () => {
   };
 
   return (
-    <section className="w-full text-black px-2 py-10 md:px-35 md:py-32 font-[font3] md:font-[font1] overflow-hidden">
-
-      {/*  TOP ROW  */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:mb-10">
-
-        {/* LEFT */}
-        <div className="flex items-center gap-3 text-[22px] md:text-lg">
+    <section className="w-full overflow-hidden px-4 md:px-32 py-20 font-[font1]">
+      {/* TOP SECTION */}
+      <div
+        className="
+          grid
+          grid-cols-1
+          md:grid-cols-[1fr_2fr_1fr]
+          gap-6 md:gap-0
+          items-start
+          mb-10
+        "
+      >
+        <div className="flex items-center gap-3 text-[20px] md:text-[18px]">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
-          <span>Exclusive Projects</span>
+          <span className="text-lg">Exclusive Projects</span>
         </div>
 
-        {/* CENTER */}
         <h2 className="text-[24px] md:text-[40px] leading-tight tracking-tight font-[font2] md:max-w-[520px]">
           Boldly Rooted in Vision. <br />
-          Exclusive In Execution.
+          Exclusive in Execution.
         </h2>
 
-        {/* RIGHT */}
-        <div className="flex flex-col items-end">
-          <p className="text-sm text-black/70 max-w-[300px] mb-6 md:text-right">
-            A visual library of interiors brought to life from
-            blueprint to beauty.
+        <div className="flex flex-col items-start lg:items-end max-w-[320px] text-sm text-black/70">
+          <p>
+            A visual library of interiors brought to life from blueprint to
+            beauty.
           </p>
 
-          <div className="flex gap-3">
+          <div className="flex mt-5 gap-3">
             <button
               onClick={() => slide(-1)}
               className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center"
@@ -100,47 +123,38 @@ const ExclusiveProjects = () => {
             </button>
           </div>
         </div>
-
       </div>
 
-      {/*  CAROUSEL  */}
+      {/* SLIDER */}
       <div className="relative">
-
-        <div
-          ref={trackRef}
-          className="flex gap-16 will-change-transform"
-        >
+        <div ref={trackRef} className="flex gap-8 will-change-transform">
           {loopProjects.map((p, i) => {
-            const isCenter =
-              i === indexRef.current ||
-              i === indexRef.current + projects.length;
+            const project = projects[i % projects.length];
+            const isCenter = i === activeIndex;
 
             return (
               <div
                 key={i}
-                className={`w-[480px] shrink-0 transition-opacity duration-500 ${
-                  isCenter ? "opacity-100" : "opacity-30"
-                }`}
+                ref={i === 0 ? cardRef : null}
+                className={`shrink-0 transition-opacity duration-500
+                  w-[260px] sm:w-[320px] md:w-[480px]
+                  ${isCenter ? "opacity-100" : "opacity-30"}
+                `}
               >
-                <div className="bg-[#F4F2EE] h-fit w-fit rounded-2xl p-4">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    className="rounded-xl h-[200px] w-[200px] md:h-[360px] md:w-full object-cover"
-                  />
+                <div className="bg-[#F4F2EE] rounded-2xl p-4">
+                  <img src={project.img} />
+                  <h3>{project.title}</h3>
                 </div>
 
                 <div className="mt-4">
                   <h3 className="text-lg font-medium">{p.title}</h3>
-                  <p className="text-sm text-black/50">{p.year}</p>
+                  <p className="text-sm opacity-50">{p.year}</p>
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
-
     </section>
   );
 };

@@ -22,7 +22,6 @@ const ContactSection = () => {
       </div>
 
       {/* IMAGE + CARD */}
-      {/* IMAGE + CARD */}
       <div className="relative w-full">
         {/* BACKGROUND IMAGE (TALLER) */}
         <div className="relative h-[520px] md:h-[620px] rounded-3xl overflow-hidden">

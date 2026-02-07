@@ -1,11 +1,12 @@
 import React from 'react'
+import img from "../../assets/shop/shop1.jpeg";
 
 const Image1 = () => {
   return (
     <div>
         <div className="mt-16 w-full overflow-hidden rounded-[24px]">
           <img
-            src="https://framerusercontent.com/images/mHXkmW0Jfupllqyy8XPFTDe0k.jpg?scale-down-to=2048"
+            src={img}
             alt="Interior"
             className="w-full md:h-[520px] object-cover"
           />

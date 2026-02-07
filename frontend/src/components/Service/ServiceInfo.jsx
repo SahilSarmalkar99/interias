@@ -1,5 +1,10 @@
 import React from "react";
 import ContentButton1 from "../Home/ContentButton1";
+import img1 from "../../assets/room/room4.jpeg";
+import img2 from "../../assets/bedroom/bedroom3.jpeg";
+import img3 from "../../assets/kitchen/kitchen3.jpeg";
+import img4 from "../../assets/room/room7.jpeg";
+import img5 from "../../assets/ceiling/ceiling.jpeg";
 
 const servicesData = [
   {
@@ -9,7 +14,7 @@ const servicesData = [
       "Complete interior solutions that balance aesthetics, functionality, and personal expression—designed to reflect how you live and work.",
     stat: "90+",
     statLabel: "Transformed Spaces",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: img1,
   },
   {
     step: "002",
@@ -18,7 +23,7 @@ const servicesData = [
       "End-to-end interior execution—from design to delivery—handled seamlessly with precision, quality, and accountability.",
     stat: "40+",
     statLabel: "Workspaces Designed",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+    image: img2,
   },
   {
     step: "003",
@@ -27,7 +32,7 @@ const servicesData = [
       "Structural modifications and foundational work executed with care, accuracy, and long-term durability in mind.",
     stat: "25+",
     statLabel: "Hospitality Projects",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+    image: img3,
   },
   {
     step: "004",
@@ -36,7 +41,7 @@ const servicesData = [
       "Ergonomic, space-efficient modular kitchens crafted for everyday convenience, durability, and timeless appeal.",
     stat: "120+",
     statLabel: "Custom Pieces",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc",
+    image: img4,
   },
   {
     step: "005",
@@ -45,7 +50,7 @@ const servicesData = [
       "Bespoke furniture and tailored design elements that complete spaces with comfort, character, and intent.",
     stat: "60+",
     statLabel: "Renovations",
-    image: "https://images.unsplash.com/photo-1586105251261-72a756497a11",
+    image: img5,
   },
 ];
 

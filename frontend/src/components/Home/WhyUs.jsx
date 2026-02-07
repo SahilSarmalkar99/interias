@@ -2,61 +2,70 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-const logos = [
-  "/logos/logo1.svg",
-  "/logos/logo2.svg",
-  "/logos/logo3.svg",
-  "/logos/logo4.svg",
-  "/logos/logo5.svg",
-  "/logos/logo6.svg",
-];
+import img1 from "../../assets/whyUs/22_cities.png";
+import img2 from "../../assets/whyUs/flat_10_year_warranty.png";
+import img3 from "../../assets/whyUs/homes_delivered.png";
+import img4 from "../../assets/whyUs/inhouse_designers.png";
+import img5 from "../../assets/whyUs/no_hidden_costs.png";
+import img6 from "../../assets/whyUs/personalised_designs.png";
+import img7 from "../../assets/whyUs/transparent_pricing.png";
+
+const logos = [img1, img2, img3, img4, img5, img6, img7];
+
 const WhyUs = () => {
   const marqueeRef = useRef(null);
+  const trackRef = useRef(null);
 
   useGSAP(() => {
-    const ctx = gsap.context(() => {
-      const totalWidth = marqueeRef.current.scrollWidth / 2;
+    const track = trackRef.current;
 
-      gsap.to(".logo-track", {
-        x: -totalWidth,
-        duration: 10,
-        ease: "none",
-        repeat: -1,
-      });
+    // Width of half track (since logos are duplicated)
+    const totalWidth = track.scrollWidth / 2;
+
+    gsap.set(track, { x: 0 });
+
+    gsap.to(track, {
+      x: -totalWidth,
+      duration: 10,          
+      ease: "none",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth),
+      },
     });
-
-    return () => ctx.revert();
   }, []);
 
   return (
-    <section className="w-full px-2 md:px-35 py-5 md:py-20 text-black font-[font1] overflow-hidden">
+    <section className="w-full px-2 md:px-35 py-5 md:py-20 overflow-hidden">
+      
       {/* HEADER */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[200px_1fr_480px] mb-20">
-        <div className="flex items-center gap-3 text-[20px] md:text-[18px]">
+        <div className="flex items-center gap-3 md:text-[18px] text-[24px] font-[font1]">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Why Choose Us</span>
         </div>
 
-        <h2 className="text-[24px] md:text-[30px] md:mt-4.5 ml-2 md:ml-50 leading-tight font-[font4] tracking-tighter md:max-w-[520px]">
+        <h2 className="text-[24px] md:text-[30px] ml-2 font-[font4] tracking-tight">
           Design guided by <br /> thought and intention.
         </h2>
 
-        <div className="text-[16px] md:text-sm md:mt-4 leading-tight tracking-tight text-black/70 max-w-[320px] justify-self-end">
-          We blend innovation, personal understanding, and craftsmanship to
-          create spaces that truly resonate.
-        </div>
+        <p className="text-[18px] md:text-sm text-black/70 md:max-w-[320px] md:justify-self-end">
+          We blend innovation, personal understanding, and craftsmanship.
+        </p>
       </div>
 
       {/* MARQUEE */}
-      <div ref={marqueeRef} className="relative overflow-hidden">
-        <div className="logo-track flex gap-24 w-max">
-          {/* Duplicate logos */}
+      <div ref={marqueeRef} className="overflow-hidden">
+        <div
+          ref={trackRef}
+          className="flex gap-24 w-max items-center"
+        >
           {[...logos, ...logos].map((logo, i) => (
             <img
               key={i}
               src={logo}
               alt="Client Logo"
-              className="h-10 opacity-70 grayscale"
+              className="h-35 md:h-40  opacity-100 "
               draggable={false}
             />
           ))}

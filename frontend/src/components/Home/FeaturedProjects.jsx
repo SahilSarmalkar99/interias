@@ -1,27 +1,33 @@
+import img1 from "../../assets/room/room6.jpeg";
+import img2 from "../../assets/room/room9.jpeg";
+import img3 from "../../assets/washroom/washroom.jpeg";
+import img4 from "../../assets/room/room3.jpeg";
+import img5 from "../../assets/bedroom/bedroom6.jpeg";
+
 const projects = [
   {
     title: "Nordic Light Loft",
-    img: "https://framerusercontent.com/images/QtoxpdAK6UyWQPiXfmyT6x3s.jpg?width=1200&height=800",
+    img: img1,
     tags: ["Scandinavian", "Functional Elegance"],
   },
   {
     title: "Redwood Horizon",
-    img: "https://framerusercontent.com/images/t8wfsgBHFfqnnWtQRlpy7V3Pmg.png?width=1200&height=673",
+    img: img2,
     tags: ["Timber Architecture", "Nature Immersion"],
   },
   {
     title: "Atelier Noir",
-    img: "https://framerusercontent.com/images/TcSbZmiUKIbBNljE5KfNXY0mDY.png?width=1200&height=1200",
+    img: img3,
     tags: ["Monochrome", "Industrial Chic"],
   },
   {
     title: "Noir Cultura Studio",
-    img: "https://framerusercontent.com/images/v1HC8e2kQhWRTgB4S8J2rmCa5a8.png?scale-down-to=1024&width=1200&height=1200",
+    img: img4,
     tags: ["Monochrome", "Industrial Chic"],
   },
   {
     title: "Maison Éclat Studio",
-    img: "https://framerusercontent.com/images/BSvAZaTsGCd7wGRbgeAlmOIOXtk.png?scale-down-to=1024&width=1200&height=673",
+    img: img5,
     tags: ["Monochrome", "Industrial Chic"],
   },
 ];
@@ -42,7 +48,7 @@ const FeaturedProjects = ({
           mb-10
         "
       >
-        <div className="flex items-center gap-3 text-xl font-[font4] md:text-[18px]">
+        <div className="flex items-center gap-3 text-[20px] md:text-[18px]">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
           <span>Featured Projects</span>
         </div>
@@ -68,7 +74,6 @@ const FeaturedProjects = ({
       {/* GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
         {projects.map((p, i) => {
-
           if (isdisplayed.length && !isdisplayed[i]) return null;
 
           return (

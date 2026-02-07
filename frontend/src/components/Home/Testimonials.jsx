@@ -84,20 +84,11 @@ const Testimonials = () => {
       <div className="bg-[#F4F2EE] rounded-3xl p-4 md:p-8 overflow-hidden">
         <div
           ref={cardRef}
-          className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-6 items-start min-w-0"
+          className="grid grid-cols-1 gap-6 items-start min-w-0"
         >
-          {/* IMAGE */}
-          <div className="w-full h-[220px] md:w-[260px] md:h-[280px] rounded-2xl overflow-hidden shrink-0">
-            <img
-              src={t.img}
-              alt={t.name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
           {/* TEXT */}
           <div>
-            <p className="text-[16px] md:text-[20px] leading-relaxed mb-4 md:mb-10 max-w-full break-words">
+            <p className="text-[16px] md:text-[20px] leading-relaxed mb-4 md:mb-10 break-words">
               {t.text}
             </p>
 

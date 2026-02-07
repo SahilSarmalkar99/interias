@@ -1,5 +1,8 @@
 import React from "react";
 import ContentButton1 from "../Home/ContentButton1";
+import img1 from "../../assets/room/room1.jpeg"
+import img2 from "../../assets/room/room7.jpeg"
+import img3 from "../../assets/bedroom/bedroom5.jpeg"
 
 const AboutInfo = () => {
   return (
@@ -33,28 +36,44 @@ const AboutInfo = () => {
         </div>
 
         {/* IMAGE */}
-        <div className="grid grid-cols-2 gap-6">
-          {/* Top */}
-          <img
-            src="https://framerusercontent.com/images/d2lyAqkJISrIytMDWz1e8RZS2s.jpg?scale-down-to=1024&width=1808&height=2400"
-            alt="Interior design"
-            className="rounded-2xl object-cover md:w-full  md:h-[220px]"
-          />
+        {/* IMAGE GRID */}
+<div
+  className="
+    grid
+    grid-cols-1
+    sm:grid-cols-2
+    gap-4
+    lg:gap-6
+  "
+>
+  {/* Top Left */}
+  <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/9]">
+    <img
+      src={img1}
+      alt="Interior design"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-          {/* right */}
-          <img
-            src="https://framerusercontent.com/images/mdwExRctPW7Z8fsbfsxx6FiHKQ.png?scale-down-to=1024&width=1600&height=2400"
-            alt="Interior design"
-            className="rounded-2xl object-cover md:w-full h-[370px] md:h-[460px] row-span-2"
-          />
+  {/* Right Tall Image */}
+  <div className="relative overflow-hidden rounded-2xl aspect-[3/4] sm:row-span-2 lg:aspect-[3/4]">
+    <img
+      src={img2}
+      alt="Interior design"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-          {/* botom */}
-          <img
-            src="https://framerusercontent.com/images/DLSRiHDySPNCeXrXFjU9xcYh20s.png?scale-down-to=1024&width=1792&height=2400"
-            alt="Interior design"
-            className="rounded-2xl object-cover md:w-full  md:h-[220px]"
-          />
-        </div>
+  {/* Bottom Left */}
+  <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/9]">
+    <img
+      src={img3}
+      alt="Interior design"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
+
       </div>
     </section>
   );
