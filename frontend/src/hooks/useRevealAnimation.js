@@ -1,34 +1,30 @@
-import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const useRevealAnimation = (ref, delay = 0) => {
-  useEffect(() => {
-    const el = ref?.current;
-    if (!el) return;
+gsap.registerPlugin(ScrollTrigger);
 
-    gsap.set(el, { y: 100, opacity: 0 });
+const useRevealAnimation = (ref) => {
+      useGSAP(() => {
+    const section = ref.current;
 
-    const obs = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(el, {
-              y: 0,
-              opacity: 1,
-              duration: 1,
-              delay: delay,
-              ease: "power3.out",
-            });
-            observer.unobserve(el);
-          }
-        });
+    gsap.fromTo(
+      section,
+      { y: 80, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay:0,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+          toggleActions: "play none none none",
+        },
       },
-      { threshold: 0.2 }
     );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [ref, delay]);
+  });
 };
 
 export default useRevealAnimation;

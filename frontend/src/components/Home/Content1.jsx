@@ -6,7 +6,7 @@ const Content1 = () => {
   const sectionRef = useRef(null);
   useRevealAnimation(sectionRef)
   return (
-    <div ref={sectionRef}>
+    <section ref={sectionRef}>
         <div className="flex md:flex-row flex-col justify-between items-start h-[300px] md:h-full">
           {/* LEFT: STUDIO */}
           <div className="flex items-center gap-3 ">
@@ -36,7 +36,7 @@ const Content1 = () => {
             </Link>
           </div>
         </div>
-    </div>
+    </section>
   )
 }
 

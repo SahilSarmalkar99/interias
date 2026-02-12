@@ -84,32 +84,26 @@ const ExclusiveProjects = () => {
     });
   };
 
-  useGSAP(
-  () => {
+    useGSAP(() => {
     const section = sectionRef.current;
-    const track = trackRef.current;
 
-    // 🔥 Section Reveal Animation
-    gsap.from(section, {
-      y: 100,
-      opacity: 0,
-      duration: 1.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none none",
-        once: true,
+    gsap.fromTo(
+      section,
+      { y: 80, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay:0.3,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+          toggleActions: "play none none none",
+        },
       },
-    });
-
-    // 🔥 Initial slider position
-    gsap.set(track, {
-      x: -startIndex * cardWidthRef.current,
-    });
-  },
-  { scope: sectionRef }
-);
+    );
+  });
 
 
   return (

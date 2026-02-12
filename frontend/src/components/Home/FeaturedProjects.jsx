@@ -11,7 +11,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const projects = [
   {
     title: "Modern Home Interior Design",
@@ -43,47 +42,34 @@ const projects = [
 const FeaturedProjects = ({
   isdisplayed = [false, false, false, false, false, false],
 }) => {
-
   const sectionRef = useRef(null);
-  useGSAP(
-  () => {
+
+  useGSAP(() => {
     const section = sectionRef.current;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none none",
-        once: true,
-      },
-    });
-
-    // Header animation
-    tl.from(".featured-header", {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-
-    // Cards animation
-    .from(
-      ".featured-card",
+    gsap.fromTo(
+      section,
+      { y: 80, opacity: 0 },
       {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        delay:0.3,
         ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+          toggleActions: "play none none none",
+        },
       },
-      "-=0.5"
     );
-  },
-  { scope: sectionRef }
-);
+  });
 
   return (
-    <section  ref={sectionRef} className="w-full px-2 p-10 text-black md:px-35 md:py-32 font-[font1]  ">
+    <section
+      ref={sectionRef}
+      className="w-full px-2 p-10 text-black md:px-35 md:py-32 font-[font1]  "
+    >
       {/* HEADER */}
       <div
         className="
@@ -111,10 +97,10 @@ const FeaturedProjects = ({
             spaces!
           </p>
           <Link to="/projects">
-          <div className="mt-4 flex items-center gap-2  text-black">
-            <span>View Projects</span>
-            <span className="text-lg">↗</span>
-          </div>
+            <div className="mt-4 flex items-center gap-2  text-black">
+              <span>View Projects</span>
+              <span className="text-lg">↗</span>
+            </div>
           </Link>
         </div>
       </div>

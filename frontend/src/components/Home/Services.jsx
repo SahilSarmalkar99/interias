@@ -14,7 +14,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 const services = [
   {
     id: "001",
@@ -78,45 +77,30 @@ const Services = () => {
   const sectionRef = useRef(null);
 
   useGSAP(
-  () => {
-    const section = sectionRef.current;
+    (context) => {
+      const rows = context.selector(".service-row");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 85%",
-        toggleActions: "play none none none",
-        once: true,
-      },
-    });
-
-    // Header animation
-    tl.from(".services-header", {
-      y: 80,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-
-    // Services stagger
-    .from(
-      ".service-row",
-      {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-      },
-      "-=0.5"
-    );
-  },
-  { scope: sectionRef }
-);
-
+      rows.forEach((row) => {
+        gsap.from(row, {
+          y: 60,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: row,
+            start: "top 63%",
+          },
+        });
+      });
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section ref={sectionRef} className="w-full text-black px-3 py-10 md:px-35 md:py-32 font-[font1] bg-[#D9D3C7]">
+    <section
+      ref={sectionRef}
+      className="w-full text-black px-3 py-10 md:px-35 md:py-32 font-[font1] bg-[#D9D3C7]"
+    >
       {/* HEADER */}
       <div className="services-header grid grid-cols-1 gap-10  md:grid-cols-[140px_1fr_480px] mb-10 md:mb-32 items-start">
         {/* LEFT */}
@@ -134,11 +118,11 @@ const Services = () => {
         {/* RIGHT */}
         <div className="text-[18px] leading-tight tracking-tighter md:text-sm text-black/70 md:max-w-[320px] md:justify-self-end">
           Creative solutions tailored for every style and every space.
-          <Link to = "/services">
-          <div className="mt-4 flex items-center gap-2 text-black">
-            <span>View Services</span>
-            <span>↗</span>
-          </div>
+          <Link to="/services">
+            <div className="mt-4 flex items-center gap-2 text-black">
+              <span>View Services</span>
+              <span>↗</span>
+            </div>
           </Link>
         </div>
       </div>
@@ -166,7 +150,9 @@ const Services = () => {
                 <span className="text-[20px] font-medium">
                   {s.stat.split("+")[0]}+
                 </span>
-                <div className="text-[16px] text-black/60">Transformed Spaces</div>
+                <div className="text-[16px] text-black/60">
+                  Transformed Spaces
+                </div>
               </div>
             </div>
 

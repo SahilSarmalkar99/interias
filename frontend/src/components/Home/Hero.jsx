@@ -28,7 +28,7 @@ const Hero = () => {
         end: "bottom top",
         scrub: true,
       },
-      scaleX: 0.9, // 👈 reduces from sides
+      scaleX: 0.9,
       transformOrigin: "center center",
       ease: "none",
     });
@@ -40,9 +40,7 @@ const Hero = () => {
         <HeroImage />
         <div className="relative z-10 h-full flex flex-col md:flex-row justify-center items-center md:items-end md:px-16 md:pb-12 px-2 py-10 text-white mt-50 md:mt-0">
           <LeftText />
-
-          {/* RIGHT CARD */}
-          {/* <Card /> */}
+          
         </div>
       </div>
       {/* Middle part -1 */}

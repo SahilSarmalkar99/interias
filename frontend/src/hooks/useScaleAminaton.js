@@ -1,35 +1,28 @@
-import { useEffect } from "react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useScaleAnimation = (ref, delay = 0) => {
-  useEffect(() => {
-    const el = ref?.current;
-    if (!el) return;
-
-    gsap.set(el, { scale: 0.8, opacity: 0, transformOrigin: "center center" });
-
-    const obs = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(el, {
-              scale: 1,
-              opacity: 1,
-              duration: 1.2,
-              delay: delay,
-              ease: "power3.out",
-              transformOrigin: "center center",
-            });
-            observer.unobserve(el);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, [ref, delay]);
+  useGSAP(
+    () => {
+      gsap.from(ref.current, {
+        scale: 0.8,      
+        opacity: 0,
+        duration: 1.2,
+        delay: delay,
+        ease: "power3.out",
+        transformOrigin: "center center",
+        scrollTrigger: {
+          trigger: ref.current,
+          start: "top 70%",
+          toggleActions: "play none none none",
+        },
+      });
+    },
+    { scope: ref }
+  );
 };
 
 export default useScaleAnimation;
