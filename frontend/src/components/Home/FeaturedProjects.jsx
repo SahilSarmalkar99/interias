@@ -43,22 +43,22 @@ const projects = [
   },
   {
   title: "Space-Themed Kids Bedroom Design",
-  img: img6,
+  img: img8,
   tags: ["Kids Bedroom", "Space Theme"],
 },
 {
   title: "Modern Wardrobe with Vanity Unit",
-  img: img7,
+  img: img9,
   tags: ["Wardrobe Design", "Vanity Area"],
 },
 {
   title: "Pastel Pink Kids Bedroom Interior",
-  img: img8,
+  img: img6,
   tags: ["Kids Room", "Pastel Interior"],
 },
 {
   title: "Modern Dining Area with Wall Art",
-  img: img9,
+  img: img7,
   tags: ["Dining Room", "Modern Interior"],
 },
 ];

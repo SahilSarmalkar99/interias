@@ -33,31 +33,31 @@ const projectsData = [
   {
     title: "Modern Wooden Slat Balcony with Minimal Seating & Ambient Lighting",
     year: "2024",
-    image: img4,
+    image: img8, 
     tags: ["BalconyDesign", "WoodenCeiling"],
   },
   {
     title: "Modern Green & Beige Luxury Salon Interior with Soft Drapes",
     year: "2024",
-    image: img5,
+    image: img6, 
     tags: ["SalonInterior", "LuxuryInterior"],
   },
   {
     title: "Modern Executive Office Cabin with Wood Panel & Textured Wall",
-    year: "2024",
-    image: img6,
+    year: "2024", 
+    image: img7,
     tags: ["OfficeInterior", "WoodPanelDesign"],
   },
   {
     title: "Contemporary Dining Room with Statement Mirror & Vertical Panels",
     year: "2024",
-    image: img7,
+    image: img4,
     tags: ["DiningRoomDesign", "StatementMirror"],
   },
   {
     title: "Modern Living Room with Indoor Swing & Blue Accent Sofa",
     year: "2024",
-    image: img8,
+    image: img5,
     tags: ["LivingRoomDesign", "ModernLiving"],
   },
 ];
