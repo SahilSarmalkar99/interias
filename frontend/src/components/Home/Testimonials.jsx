@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import useRevealAnimation from "../../hooks/useRevealAnimation";
 
 const testimonials = [
   {
@@ -33,6 +34,9 @@ const testimonials = [
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
   const cardRef = useRef(null);
+  const sectionRef  = useRef(null);
+
+  useRevealAnimation(sectionRef)
 
   const animate = (nextIndex) => {
     gsap.to(cardRef.current, {
@@ -62,7 +66,7 @@ const Testimonials = () => {
   const t = testimonials[index];
 
   return (
-    <section className="w-full px-2 md:px-35 md:py-5 font-[font1] text-black tracking-tight leading-tight">
+    <section ref={sectionRef} className="w-full px-2 md:px-35 md:py-5 font-[font1] text-black tracking-tight leading-tight">
       {/* HEADER */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[1fr_2fr_1fr] mb-20">
         <div className="flex items-center gap-3 text-[22px] md:text-[18px]">
@@ -81,7 +85,7 @@ const Testimonials = () => {
       </div>
 
       {/* CARD */}
-      <div className="bg-[#F4F2EE] rounded-3xl p-4 md:p-8 overflow-hidden">
+      <div className="bg-[#C6BFB2] rounded-3xl p-4 md:p-8 overflow-hidden">
         <div
           ref={cardRef}
           className="grid grid-cols-1 gap-6 items-start min-w-0"

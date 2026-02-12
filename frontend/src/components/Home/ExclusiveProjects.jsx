@@ -4,6 +4,9 @@ import { useGSAP } from "@gsap/react";
 import img1 from "../../assets/kitchen/kitchen4.jpeg";
 import img2 from "../../assets/room/room7.jpeg";
 import img3 from "../../assets/room/room3.jpeg";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const projects = [
   {
@@ -29,6 +32,8 @@ const loopProjects = [...projects, ...projects, ...projects];
 const ExclusiveProjects = () => {
   const trackRef = useRef(null);
   const cardRef = useRef(null);
+  const sectionRef = useRef(null);
+
 
   const startIndex = projects.length; // middle copy
   const indexRef = useRef(startIndex);
@@ -79,8 +84,36 @@ const ExclusiveProjects = () => {
     });
   };
 
+  useGSAP(
+  () => {
+    const section = sectionRef.current;
+    const track = trackRef.current;
+
+    // 🔥 Section Reveal Animation
+    gsap.from(section, {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    // 🔥 Initial slider position
+    gsap.set(track, {
+      x: -startIndex * cardWidthRef.current,
+    });
+  },
+  { scope: sectionRef }
+);
+
+
   return (
-    <section className="w-full overflow-hidden px-4 md:px-32 py-20 font-[font1]">
+    <section ref={sectionRef} className="w-full overflow-hidden px-4 md:px-32 py-20 font-[font1] bg-[#EAE7E1]">
       {/* TOP SECTION */}
       <div
         className="
@@ -90,6 +123,7 @@ const ExclusiveProjects = () => {
           gap-6 md:gap-0
           items-start
           mb-10
+
         "
       >
         <div className="flex items-center gap-3 text-[20px] md:text-[18px]">

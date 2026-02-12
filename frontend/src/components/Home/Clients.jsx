@@ -21,6 +21,7 @@ import img17 from "../../assets/logos/sephora.jpg";
 import img18 from "../../assets/logos/TommyHilfiger.png";
 import img19 from "../../assets/logos/US_PoloAssn.png";
 import img20 from "../../assets/logos/VanHeusen.png";
+import useRevealAnimation from "../../hooks/useRevealAnimation";
 
 const logos = [
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
@@ -30,6 +31,9 @@ const logos = [
 const Clients = () => {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useRevealAnimation(sectionRef)
 
   useGSAP(() => {
     const track = trackRef.current;
@@ -47,7 +51,7 @@ const Clients = () => {
   }, []);
 
   return (
-    <section className="w-full px-1 py-10 md:py-32 md:px-24 overflow-hidden">
+    <section ref={sectionRef} className="w-full px-1 py-10 md:py-32 md:px-24 overflow-hidden" >
       
       <h2 className="text-[28px] mb-10 md:mb-16">Our Clients</h2>
 

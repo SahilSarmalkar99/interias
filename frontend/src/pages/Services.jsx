@@ -7,7 +7,7 @@ import ServiceInfo from '../components/Service/ServiceInfo'
 
 const Services = () => {
   return (
-    <div>
+    <div className='bg-[#F5F1EA]'>
       <Nav />
       <Servicehero />
       <ServiceInfo />

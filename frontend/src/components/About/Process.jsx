@@ -6,6 +6,11 @@ import img5 from "../../assets/ceiling/ceiling2.jpeg";
 import img6 from "../../assets/kitchen/kitchen6.jpeg";
 import img7 from "../../assets/washroom/washroom2.jpeg";
 import img8 from "../../assets/room/room8.jpeg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+gsap.registerPlugin(ScrollTrigger);
 
 const processData = [
   {
@@ -39,8 +44,34 @@ const processData = [
 ];
 
 const Process = () => {
+  const sectionRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+
+      gsap.from(section, {
+        y: 80,
+        opacity: 0,
+        filter: "blur(4px)",
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 50%",
+          toggleActions: "play none none none",
+          once: true,
+        },
+      });
+    },
+    { scope: sectionRef },
+  );
+
   return (
-    <section className="bg-white px-3 md:px-16 lg:px-24 py-20 font-[font1]">
+    <section
+      ref={sectionRef}
+      className=" px-3 md:px-16 lg:px-24 py-20 font-[font1] "
+    >
       <div className="max-w-[1400px] mx-auto">
         {/* HEADER (ONLY ONCE) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 md:mb-20">

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
+import useRevealAnimation from "../../hooks/useRevealAnimation";
 
 const Offer = () => {
+
+  const sectionRef = useRef(null);
+
+  useRevealAnimation(sectionRef);
+
   return (
-    <section className="w-full px-2 md:px-35 py-20  text-black font-[font1] overflow-hidden ">
+    <section ref={sectionRef} className="w-full px-2 md:px-35 py-20 mt-5 text-black font-[font1] overflow-hidden bg-[#EAE7E1] ">
       <div className="max-w-[1200px] mx-auto">
         {/*  TOP  */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-[200px_1fr_480px] mb-20">

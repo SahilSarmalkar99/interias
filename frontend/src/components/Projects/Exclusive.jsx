@@ -2,6 +2,8 @@ import React from "react";
 import img1 from "../../assets/room/room7.jpeg";
 import img2 from "../../assets/bedroom/bedroom6.jpeg";
 import img3 from "../../assets/kitchen/kitchen4.jpeg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const projectsData = [
   {
@@ -25,9 +27,24 @@ const projectsData = [
 ];
 
 const Exclusive = () => {
+    useGSAP(() => {
+    gsap.fromTo(
+      ".about",
+      { y: 50, opacity: 0, filter: "blur(2px)" },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        stagger: 0.2,
+        delay: 0.3,
+        ease: "power3.out",
+      }
+    );
+  }, []);
   return (
     <div>
-      <section className="bg-white px-2 md:px-16 lg:px-24 py-10 font-[font1]">
+      <section className="about bg-[#F5F1EA] px-2 md:px-16 lg:px-24 py-10 font-[font1]">
         <div className="max-w-[1400px] mx-auto">
           {/* HEADER */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 md:mb-20">

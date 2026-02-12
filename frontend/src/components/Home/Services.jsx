@@ -7,6 +7,13 @@ import wall from "../../assets/door/door.jpeg";
 import ceiling from "../../assets/ceiling/ceiling.jpeg";
 import civil from "../../assets/shop/shop1.jpeg";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const services = [
   {
@@ -68,10 +75,50 @@ const services = [
 ];
 
 const Services = () => {
+  const sectionRef = useRef(null);
+
+  useGSAP(
+  () => {
+    const section = sectionRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    // Header animation
+    tl.from(".services-header", {
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    })
+
+    // Services stagger
+    .from(
+      ".service-row",
+      {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+      },
+      "-=0.5"
+    );
+  },
+  { scope: sectionRef }
+);
+
+
   return (
-    <section className="w-full text-black px-3 py-10 md:px-35 md:py-32 font-[font1]">
+    <section ref={sectionRef} className="w-full text-black px-3 py-10 md:px-35 md:py-32 font-[font1] bg-[#D9D3C7]">
       {/* HEADER */}
-      <div className="grid grid-cols-1 gap-10  md:grid-cols-[140px_1fr_480px] mb-10 md:mb-32 items-start">
+      <div className="services-header grid grid-cols-1 gap-10  md:grid-cols-[140px_1fr_480px] mb-10 md:mb-32 items-start">
         {/* LEFT */}
         <div className="flex items-center gap-3 text-2xl md:text-[18px] mt-2">
           <span className="w-2 h-2 rounded-full bg-[#8A867B]" />
@@ -101,7 +148,7 @@ const Services = () => {
         {services.map((s) => (
           <div
             key={s.id}
-            className="group grid grid-cols-1 md:grid-cols-[140px_1fr_480px]
+            className=" service-row group grid grid-cols-1 md:grid-cols-[140px_1fr_480px]
                    items-center  md:py-10 md:border-b border-black/10"
           >
             {/* NUMBER */}

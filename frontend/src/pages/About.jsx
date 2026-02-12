@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 
 const About = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-[#F5F1EA]">
       <Nav />
       <AboutHero />
       <AboutInfo />

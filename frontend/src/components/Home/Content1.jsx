@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import useRevealAnimation from '../../hooks/useRevealAnimation'
 
 const Content1 = () => {
+  const sectionRef = useRef(null);
+  useRevealAnimation(sectionRef)
   return (
-    <div>
+    <div ref={sectionRef}>
         <div className="flex md:flex-row flex-col justify-between items-start h-[300px] md:h-full">
           {/* LEFT: STUDIO */}
           <div className="flex items-center gap-3 ">

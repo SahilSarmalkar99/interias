@@ -5,6 +5,9 @@ import img2 from "../../assets/bedroom/bedroom3.jpeg";
 import img3 from "../../assets/kitchen/kitchen3.jpeg";
 import img4 from "../../assets/room/room7.jpeg";
 import img5 from "../../assets/ceiling/ceiling.jpeg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 
 const servicesData = [
   {
@@ -55,8 +58,24 @@ const servicesData = [
 ];
 
 const ServiceInfo = () => {
+    useGSAP(() => {
+    gsap.fromTo(
+      ".info",
+      { y: 50, opacity: 0, filter: "blur(2px)" },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 1.8,
+        stagger: 0.2,
+        delay: 0.3,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-white px-4 md:px-20 py-10 font-[font4]">
+    <section className="info bg-[#F5F1EA] px-4 md:px-20 py-10 font-[font4]">
       <div className="max-w-[1400px] mx-auto">
         {/* HEADER */}
          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 md:mb-20">

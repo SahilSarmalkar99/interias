@@ -9,12 +9,16 @@ import img4 from "../../assets/whyUs/inhouse_designers.png";
 import img5 from "../../assets/whyUs/no_hidden_costs.png";
 import img6 from "../../assets/whyUs/personalised_designs.png";
 import img7 from "../../assets/whyUs/transparent_pricing.png";
+import useRevealAnimation from "../../hooks/useRevealAnimation";
 
 const logos = [img1, img2, img3, img4, img5, img6, img7];
 
 const WhyUs = () => {
   const marqueeRef = useRef(null);
   const trackRef = useRef(null);
+  const sectionRef = useRef(null);
+
+  useRevealAnimation(sectionRef)
 
   useGSAP(() => {
     const track = trackRef.current;
@@ -36,7 +40,7 @@ const WhyUs = () => {
   }, []);
 
   return (
-    <section className="w-full px-2 md:px-35 py-5 md:py-20 overflow-hidden">
+    <section ref={sectionRef} className="w-full px-2 md:px-35 py-5 md:py-20 overflow-hidden">
       
       {/* HEADER */}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-[200px_1fr_480px] mb-20">

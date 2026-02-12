@@ -4,6 +4,13 @@ import img3 from "../../assets/washroom/washroom.jpeg";
 import img4 from "../../assets/room/room3.jpeg";
 import img5 from "../../assets/bedroom/bedroom6.jpeg";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 
 const projects = [
   {
@@ -36,8 +43,47 @@ const projects = [
 const FeaturedProjects = ({
   isdisplayed = [false, false, false, false, false, false],
 }) => {
+
+  const sectionRef = useRef(null);
+  useGSAP(
+  () => {
+    const section = sectionRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    // Header animation
+    tl.from(".featured-header", {
+      y: 80,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    })
+
+    // Cards animation
+    .from(
+      ".featured-card",
+      {
+        y: 80,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+      },
+      "-=0.5"
+    );
+  },
+  { scope: sectionRef }
+);
+
   return (
-    <section className="w-full px-2 p-10 text-black md:px-35 md:py-32 font-[font1]">
+    <section  ref={sectionRef} className="w-full px-2 p-10 text-black md:px-35 md:py-32 font-[font1]  ">
       {/* HEADER */}
       <div
         className="

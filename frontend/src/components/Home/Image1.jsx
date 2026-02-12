@@ -1,9 +1,13 @@
 import React from "react";
 import img from "../../assets/display/cafe.png";
+import { useRef } from "react";
+import useScaleAminaton from "../../hooks/useScaleAminaton";
 
 const Image1 = () => {
+  const sectionRef = useRef(null);
+  useScaleAminaton(sectionRef)
   return (
-    <div className="mt-16 w-full overflow-hidden rounded-2xl">
+    <div ref={sectionRef} className="mt-16 w-full overflow-hidden rounded-2xl">
       <img
         src={img}
         alt="Interior"

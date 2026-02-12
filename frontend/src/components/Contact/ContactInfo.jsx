@@ -9,6 +9,9 @@ import {
   Instagram,
 } from "lucide-react";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
 const contactInfo = [
   {
     text: "ajay.interiorconcepts@gmail.com",
@@ -60,8 +63,24 @@ const faqData = [
 const ContactInfo = () => {
   const [openIndex, setOpenIndex] = useState();
 
+      useGSAP(() => {
+    gsap.fromTo(
+      ".info",
+      { y: 50, opacity: 0, filter: "blur(2px)" },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 1.8,
+        stagger: 0.2,
+        delay: 0.3,
+        ease: "power3.out",
+      }
+    );
+  }, []);
+
   return (
-    <section className="bg-white px-6 md:px-16 lg:px-24 py-20 font-[font1]">
+    <section className="info  px-6 md:px-16 lg:px-24 py-20 font-[font1]">
       {/* CONTACT  */}
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 mb-40">
         {/* LEFT */}

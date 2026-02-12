@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useStaggerReveal from "../../hooks/useStaggerReveal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,7 @@ const stats = [
 
 const ContentButton1 = ({isdisplayed = [true ,true ,true] , px=24 ,py=32 }) => {
   const sectionRef = useRef(null);
-
+  useStaggerReveal(sectionRef)
   useGSAP(
     () => {
       gsap.fromTo(
@@ -65,7 +66,7 @@ const ContentButton1 = ({isdisplayed = [true ,true ,true] , px=24 ,py=32 }) => {
           if (!isdisplayed[i]) return null;
 
           return (
-            <div key={i} className="md:space-y-4">
+            <div key={i} className="md:space-y-4 reveal-item">
               {/* NUMBER */}
               <h3 className="text-[36px] md:text-[48px] font-semibold text-[#8A867B]">
                 <span

@@ -1,8 +1,15 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
+import useRevealAnimation from "../../hooks/useRevealAnimation";
 
 const ContactSection = () => {
+  
+  const sectionRef = useRef(null);
+
+  useRevealAnimation(sectionRef)
+
   return (
-    <section className="w-full px-6 md:px-35 py-10 md:py-10 text-black font-[font1]">
+    <section ref={sectionRef} className="w-full px-6 md:px-35 py-10 md:py-10 text-black font-[font1]">
       {/*  HEADER  */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-[140px_1fr_420px] items-start mb-24">
         {/* LEFT */}
