@@ -3,6 +3,10 @@ import img2 from "../../assets/room/room9.jpeg";
 import img3 from "../../assets/washroom/washroom.jpeg";
 import img4 from "../../assets/room/room3.jpeg";
 import img5 from "../../assets/bedroom/bedroom6.jpeg";
+import img6 from "../../assets/features/img1.png"
+import img7 from "../../assets/features/img2.png"
+import img8 from "../../assets/features/img3.png"
+import img9 from "../../assets/features/img4.png"
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -37,10 +41,30 @@ const projects = [
     img: img5,
     tags: ["Minimal Bedroom", "Interior Styling"],
   },
+  {
+  title: "Space-Themed Kids Bedroom Design",
+  img: img6,
+  tags: ["Kids Bedroom", "Space Theme"],
+},
+{
+  title: "Modern Wardrobe with Vanity Unit",
+  img: img7,
+  tags: ["Wardrobe Design", "Vanity Area"],
+},
+{
+  title: "Pastel Pink Kids Bedroom Interior",
+  img: img8,
+  tags: ["Kids Room", "Pastel Interior"],
+},
+{
+  title: "Modern Dining Area with Wall Art",
+  img: img9,
+  tags: ["Dining Room", "Modern Interior"],
+},
 ];
 
 const FeaturedProjects = ({
-  isdisplayed = [false, false, false, false, false, false],
+  isdisplayed = [false, false, false, false, false, false ,false ,false ,false , false],
 }) => {
   const sectionRef = useRef(null);
 
@@ -54,11 +78,11 @@ const FeaturedProjects = ({
         y: 0,
         opacity: 1,
         duration: 1.2,
-        delay:0.3,
+        delay:0.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 50%",
+          start: "top 60%",
           toggleActions: "play none none none",
         },
       },

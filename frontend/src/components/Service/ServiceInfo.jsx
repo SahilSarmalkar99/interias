@@ -7,7 +7,10 @@ import img4 from "../../assets/room/room7.jpeg";
 import img5 from "../../assets/ceiling/ceiling.jpeg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const servicesData = [
   {
@@ -58,27 +61,70 @@ const servicesData = [
 ];
 
 const ServiceInfo = () => {
-    useGSAP(() => {
+  const sectionRef = useRef(null);
+
+useGSAP((context) => {
+  const blocks = context.selector(".service-block");
+
+  // 🔥 Section + First block animation
+  const tl = gsap.timeline();
+
+  tl.fromTo(
+    ".info",
+    { y: 50, opacity: 0, filter: "blur(2px)" },
+    {
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 1.2,
+      ease: "power3.out",
+    }
+  );
+
+  tl.fromTo(
+    blocks[0], // 👈 first service
+    { y: 60, opacity: 0, filter: "blur(3px)" },
+    {
+      y: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+      duration: 1,
+      ease: "power3.out",
+    },
+    "-=0.6"
+  );
+
+  // 🔥 Scroll animation for rest
+  blocks.slice(1).forEach((block) => {
     gsap.fromTo(
-      ".info",
-      { y: 50, opacity: 0, filter: "blur(2px)" },
+      block,
+      { y: 60, opacity: 0, filter: "blur(3px)" },
       {
         y: 0,
         opacity: 1,
         filter: "blur(0px)",
-        duration: 1.8,
-        stagger: 0.2,
-        delay: 0.3,
+        duration: 1,
         ease: "power3.out",
+        scrollTrigger: {
+          trigger: block,
+          start: "top 85%",
+          toggleActions: "play none none none",
+          once: true,
+        },
       }
     );
-  }, []);
+  });
+}, { scope: sectionRef });
+
 
   return (
-    <section className="info bg-[#F5F1EA] px-4 md:px-20 py-10 font-[font4]">
-      <div className="max-w-[1400px] mx-auto">
+    <section
+      ref={sectionRef}
+      className="info bg-[#F5F1EA] px-4 md:px-20 py-10 font-[font4]"
+    >
+      <div className="info max-w-[1400px] mx-auto">
         {/* HEADER */}
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 md:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 md:mb-20">
           <div className="flex items-center gap-3 text-[24px] md:text-[20px]">
             <span className="w-2 h-2 rounded-full bg-[#9C937A]" />
             <span>Services</span>
@@ -103,10 +149,12 @@ const ServiceInfo = () => {
           {servicesData.map((service, index) => (
             <div
               key={index}
-              className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start"
+              className="service-block grid grid-cols-1 md:grid-cols-3 gap-5 items-start"
             >
               {/* STEP */}
-              <div className="text-black/60 text-[22px] pt-2">({service.step})</div>
+              <div className="text-black/60 text-[22px] pt-2">
+                ({service.step})
+              </div>
 
               {/* IMAGE */}
               <div className="md:col-span-2">

@@ -2,6 +2,12 @@ import React from "react";
 import img1 from "../../assets/room/room7.jpeg";
 import img2 from "../../assets/bedroom/bedroom6.jpeg";
 import img3 from "../../assets/kitchen/kitchen4.jpeg";
+import img4 from "../../assets/exclusiveFeature/img5.png"
+import img5 from "../../assets/exclusiveFeature/img6.png"
+import img6 from "../../assets/exclusiveFeature/img7.png"
+import img7 from "../../assets/exclusiveFeature/img8.png"
+import img8 from "../../assets/exclusiveFeature/img9.png"
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -23,6 +29,36 @@ const projectsData = [
     year: "2024",
     image: img3,
     tags: ["Minimalism", "Natural"],
+  },
+  {
+    title: "Modern Wooden Slat Balcony with Minimal Seating & Ambient Lighting",
+    year: "2024",
+    image: img4,
+    tags: ["BalconyDesign", "WoodenCeiling"],
+  },
+  {
+    title: "Modern Green & Beige Luxury Salon Interior with Soft Drapes",
+    year: "2024",
+    image: img5,
+    tags: ["SalonInterior", "LuxuryInterior"],
+  },
+  {
+    title: "Modern Executive Office Cabin with Wood Panel & Textured Wall",
+    year: "2024",
+    image: img6,
+    tags: ["OfficeInterior", "WoodPanelDesign"],
+  },
+  {
+    title: "Contemporary Dining Room with Statement Mirror & Vertical Panels",
+    year: "2024",
+    image: img7,
+    tags: ["DiningRoomDesign", "StatementMirror"],
+  },
+  {
+    title: "Modern Living Room with Indoor Swing & Blue Accent Sofa",
+    year: "2024",
+    image: img8,
+    tags: ["LivingRoomDesign", "ModernLiving"],
   },
 ];
 
@@ -87,7 +123,7 @@ const Exclusive = () => {
                 {/* <p className="text-black/60 text-sm mb-4">{project.year}</p> */}
 
                 {/* TAGS */}
-                {/* <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, i) => (
                     <span
                       key={i}
@@ -98,7 +134,7 @@ const Exclusive = () => {
                       {tag}
                     </span>
                   ))}
-                </div> */}
+                </div>
               </div>
             ))}
           </div>
