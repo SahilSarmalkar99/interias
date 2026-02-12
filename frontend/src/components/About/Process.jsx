@@ -47,21 +47,22 @@ const Process = () => {
   const sectionRef = useRef(null);
 
   useGSAP(
-    () => {
-      const section = sectionRef.current;
+    (context) => {
+      const steps = context.selector(".process-step");
 
-      gsap.from(section, {
-        y: 80,
-        opacity: 0,
-        filter: "blur(4px)",
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 50%",
-          toggleActions: "play none none none",
-          once: true,
-        },
+      steps.forEach((step) => {
+        gsap.from(step, {
+          y: 80,
+          opacity: 0,
+          duration: 1,
+          delay:0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: step,
+            start: "top 70%",
+            toggleActions: "play none none none",
+          },
+        });
       });
     },
     { scope: sectionRef },
@@ -94,7 +95,7 @@ const Process = () => {
 
         {/* STEPS */}
         {processData.map((item, index) => (
-          <div key={index} className="mb-5 md:mb-10">
+          <div key={index} className="process-step mb-5 md:mb-10">
             {/* STEP TEXT */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5 items-start">
               {/* STEP NUMBER */}
