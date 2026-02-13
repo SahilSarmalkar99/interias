@@ -1,69 +1,13 @@
 import React from "react";
-import img1 from "../../assets/room/room7.jpeg";
-import img2 from "../../assets/bedroom/bedroom6.jpeg";
-import img3 from "../../assets/kitchen/kitchen4.jpeg";
-import img4 from "../../assets/exclusiveFeature/img5.png"
-import img5 from "../../assets/exclusiveFeature/img6.png"
-import img6 from "../../assets/exclusiveFeature/img7.png"
-import img7 from "../../assets/exclusiveFeature/img8.png"
-import img8 from "../../assets/exclusiveFeature/img9.png"
-
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-const projectsData = [
-  {
-    title: "Modern Living Room with Soft Blue Accents",
-    year: "2024",
-    image: img1,
-    tags: ["Coastal Calm", "Nature"],
-  },
-  {
-    title: "Contemporary Living Room Inspired by Coastal Calm",
-    year: "2025",
-    image: img2,
-    tags: ["Oceanic", "Natural Light"],
-  },
-  {
-    title: "Elegant Living Space with Natural Light & Coastal Tones",
-    year: "2024",
-    image: img3,
-    tags: ["Minimalism", "Natural"],
-  },
-  {
-    title: "Modern Wooden Slat Balcony with Minimal Seating & Ambient Lighting",
-    year: "2024",
-    image: img8, 
-    tags: ["BalconyDesign", "WoodenCeiling"],
-  },
-  {
-    title: "Modern Green & Beige Luxury Salon Interior with Soft Drapes",
-    year: "2024",
-    image: img6, 
-    tags: ["SalonInterior", "LuxuryInterior"],
-  },
-  {
-    title: "Modern Executive Office Cabin with Wood Panel & Textured Wall",
-    year: "2024", 
-    image: img7,
-    tags: ["OfficeInterior", "WoodPanelDesign"],
-  },
-  {
-    title: "Contemporary Dining Room with Statement Mirror & Vertical Panels",
-    year: "2024",
-    image: img4,
-    tags: ["DiningRoomDesign", "StatementMirror"],
-  },
-  {
-    title: "Modern Living Room with Indoor Swing & Blue Accent Sofa",
-    year: "2024",
-    image: img5,
-    tags: ["LivingRoomDesign", "ModernLiving"],
-  },
-];
+import { useNavigate } from "react-router-dom";
+import { projectsData } from "../../data/projectsData";
 
 const Exclusive = () => {
-    useGSAP(() => {
+  const navigate = useNavigate();
+
+  useGSAP(() => {
     gsap.fromTo(
       ".about",
       { y: 50, opacity: 0, filter: "blur(2px)" },
@@ -78,10 +22,12 @@ const Exclusive = () => {
       }
     );
   }, []);
+
   return (
     <div>
       <section className="about bg-[#F5F1EA] px-2 md:px-16 lg:px-24 py-10 font-[font1]">
         <div className="max-w-[1400px] mx-auto">
+
           {/* HEADER */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 md:mb-20">
             <div className="flex items-center gap-3 text-[24px] md:text-[20px]">
@@ -89,14 +35,12 @@ const Exclusive = () => {
               <span>Exclusive Projects</span>
             </div>
 
-            {/* TITLE */}
-            <h2 className="text-xl md:text-3xl  font-[font5] leading-tight">
+            <h2 className="text-xl md:text-3xl font-[font5] leading-tight">
               Boldly Rooted in Vision.
               <br />
               Exclusive In Execution.
             </h2>
 
-            {/* DESCRIPTION */}
             <p className="text-black/70 max-w-sm md:justify-self-end">
               A visual library of interiors brought to life from blueprint to
               beauty.
@@ -105,39 +49,31 @@ const Exclusive = () => {
 
           {/* PROJECT CARDS */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {projectsData.map((project, index) => (
-              <div key={index} className="bg-[#F3F2EF] rounded-3xl p-4">
-                {/* IMAGE */}
+            {projectsData.map((project) => (
+              <div
+                key={project.id}
+                onClick={() => navigate(`/project/${project.id}`)}
+                className="bg-[#F3F2EF] rounded-3xl p-4 cursor-pointer hover:scale-105 transition"
+              >
                 <div className="rounded-2xl overflow-hidden mb-5">
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.clientName}
                     className="w-full h-[260px] object-cover"
                   />
                 </div>
 
-                {/* TITLE */}
-                <h3 className="text-lg font-medium mb-1">{project.title}</h3>
+                <h3 className="text-lg font-medium mb-1">
+                  {project.clientName}
+                </h3>
 
-                {/* YEAR */}
-                {/* <p className="text-black/60 text-sm mb-4">{project.year}</p> */}
-
-                {/* TAGS */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full
-                           border border-black/20
-                           text-black/70"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-black/60 text-sm">
+                  {project.location}
+                </p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
     </div>
