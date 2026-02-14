@@ -63,7 +63,7 @@ const faqData = [
 const ContactInfo = () => {
   const [openIndex, setOpenIndex] = useState();
 
-      useGSAP(() => {
+  useGSAP(() => {
     gsap.fromTo(
       ".info",
       { y: 50, opacity: 0, filter: "blur(2px)" },
@@ -75,7 +75,7 @@ const ContactInfo = () => {
         stagger: 0.2,
         delay: 0.3,
         ease: "power3.out",
-      }
+      },
     );
   }, []);
 
@@ -143,20 +143,59 @@ const ContactInfo = () => {
         <div className="bg-[#F3F2EF] rounded-3xl p-10">
           <h3 className="text-lg text-black/60 mb-8">Contact Information</h3>
 
-          <form className="space-y-8">
+          <form
+            className="space-y-8"
+            onSubmit={async (e) => {
+              e.preventDefault();
+
+              const formData = new FormData(e.target);
+
+              const data = {
+                firstName: formData.get("firstName"),
+                lastName: formData.get("lastName"),
+                email: formData.get("email"),
+                phone: formData.get("phone"),
+                notes: formData.get("notes"),
+              };
+
+              const res = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              });
+
+              if (res.ok) {
+                alert("Message sent successfully!");
+                e.target.reset();
+              } else {
+                alert("Something went wrong");
+              }
+            }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Input label="First Name" placeholder="Jane" />
-              <Input label="Last Name" placeholder="Smith" />
+              <Input name="firstName" label="First Name" placeholder="Jane" />
+              <Input name="lastName" label="Last Name" placeholder="Smith" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Input label="Email" placeholder="intereo@framer.com" />
-              <Input label="Contact Number" placeholder="+91 8772 62627" />
+              <Input
+                name="email"
+                label="Email"
+                placeholder="intereo@framer.com"
+              />
+              <Input
+                name="phone"
+                label="Contact Number"
+                placeholder="+91 8772 62627"
+              />
             </div>
 
             <div>
               <label className="block text-sm mb-2 text-black/80">Notes</label>
               <textarea
+                name="notes"
                 rows={4}
                 placeholder="Let's work together!"
                 className="w-full rounded-xl px-4 py-3 bg-white outline-none text-black/70 resize-none"
