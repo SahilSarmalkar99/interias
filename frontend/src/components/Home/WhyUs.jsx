@@ -2,16 +2,17 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
-import img1 from "../../assets/whyUs/22_cities.png";
-import img2 from "../../assets/whyUs/flat_10_year_warranty.png";
-import img3 from "../../assets/whyUs/homes_delivered.png";
-import img4 from "../../assets/whyUs/inhouse_designers.png";
-import img5 from "../../assets/whyUs/no_hidden_costs.png";
-import img6 from "../../assets/whyUs/personalised_designs.png";
-import img7 from "../../assets/whyUs/transparent_pricing.png";
+import img1 from "../../assets/whyUs/logo1.png";
+import img2 from "../../assets/whyUs/logo2.png";
+import img3 from "../../assets/whyUs/logo3.png";
+import img4 from "../../assets/whyUs/logo4.png";
+import img5 from "../../assets/whyUs/logo5.png";
+import img6 from "../../assets/whyUs/logo6.png";
+import img7 from "../../assets/whyUs/logo7.png";
+import img8 from "../../assets/whyUs/logo8.png";
 import useRevealAnimation from "../../hooks/useRevealAnimation";
 
-const logos = [img1, img2, img3, img4, img5, img6, img7];
+const logos = [img1, img2, img3, img4, img5, img6, img7 ,img8];
 
 const WhyUs = () => {
   const marqueeRef = useRef(null);
@@ -69,7 +70,7 @@ const WhyUs = () => {
               key={i}
               src={logo}
               alt="Client Logo"
-              className="h-35 md:h-40  opacity-100 "
+              className="h-20 md:h-25  opacity-100 "
               draggable={false}
             />
           ))}
