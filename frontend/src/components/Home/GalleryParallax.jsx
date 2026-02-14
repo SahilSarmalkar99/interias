@@ -2,12 +2,14 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { images } from "../../data/Gallery";
+import { useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function GallerySection() {
   const sectionRef = useRef(null);
   const colsRef = useRef([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -107,7 +109,7 @@ export default function GallerySection() {
               Get inspired by our <br /> 1000+ project images
             </h2>
 
-            <button className="group relative mt-8 bg-[#E6A07B] text-white px-8 py-4 rounded-xl flex items-center gap-3 pointer-events-auto transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]">
+            <button onClick={() => navigate("/projects")} className="group relative mt-8 bg-[#E6A07B] text-white px-8 py-4 rounded-xl flex items-center gap-3 pointer-events-auto transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]">
               <span className="relative z-10 font-medium tracking-wide">
                 Projects
               </span>

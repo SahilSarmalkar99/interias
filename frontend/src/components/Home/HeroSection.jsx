@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Reviews } from "../../data/Reviews";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import { useNavigate } from "react-router-dom";
 const DURATION = 4500;
 
 export default function HeroSection() {
@@ -10,6 +10,8 @@ export default function HeroSection() {
   const [animate, setAnimate] = useState(true);
   const progressRef = useRef(null);
   const containerRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const reviews = Reviews;
 
@@ -240,6 +242,7 @@ export default function HeroSection() {
             {/* Combined Button Style */}
             <div className="flex items-center w-fit rounded-xl overflow-hidden shadow-md group">
               <button
+              onClick={() => navigate("/projects")}
                 className="
         bg-[#18342F] 
         text-white 
