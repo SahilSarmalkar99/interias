@@ -17,6 +17,8 @@ import Testimonials from "./Testimonials";
 import WhyUs from "./WhyUs";
 import ContactSection from "./ContactSection";
 import Offer from "./Offer";
+import HeroSection from "./HeroSection";
+import GalleryParallax from "./GalleryParallax";
 
 gsap.registerPlugin(ScrollTrigger);
 const Hero = () => {
@@ -36,13 +38,14 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="relative h-screen overflow-hidden" id="top">
-        <HeroImage />
+       <div className="" id="top">
+        {/*<HeroImage />
         <div className="relative z-10 h-full flex flex-col md:flex-row justify-center items-center md:items-end md:px-16 md:pb-12 px-2 py-10 text-white mt-50 md:mt-0">
           <LeftText />
           
-        </div>
-      </div>
+        </div>*/}
+      <HeroSection />
+      </div> 
       {/* Middle part -1 */}
       <div className="w-full min-h-screen md:px-24 px-5 pt-20 md:pt-40 font-[font1] text-black">
         {/* TOP CONTENT ROW */}
@@ -58,13 +61,14 @@ const Hero = () => {
         <Clients /> 
       </div>
 
-      <ExclusiveProjects />
+      {/* <ExclusiveProjects />
 
-      <FeaturedProjects isdisplayed={[true ,true ,true]}/>
+      <FeaturedProjects isdisplayed={[true ,true ,true]}/> */}
+      <GalleryParallax />
 
       <Services />
       
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       <Offer />
 

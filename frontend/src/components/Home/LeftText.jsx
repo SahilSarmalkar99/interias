@@ -52,9 +52,10 @@ const LeftText = () => {
         <span className="word block">Way of Living</span>
       </h1>
 
+      <div></div>
       <p
         id="para"
-        className="mt-8 max-w-xl text-[17px] md:text-[18px] leading-relaxed text-white/80 font-normal"
+        className="mt-8 max-w-xl text-[17px] md:text-[18px] leading-relaxed text-white/80 font-normal hidden"
       >
         From concept to completion, we design interiors that feel personal,
         practical, and timeless — bringing your vision to life with expert
