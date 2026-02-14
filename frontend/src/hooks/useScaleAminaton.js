@@ -16,7 +16,7 @@ const useScaleAnimation = (ref, delay = 0) => {
         transformOrigin: "center center",
         scrollTrigger: {
           trigger: ref.current,
-          start: "top 70%",
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       });

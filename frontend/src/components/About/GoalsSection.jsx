@@ -7,23 +7,35 @@ gsap.registerPlugin(ScrollTrigger);
 const GoalsSection = () => {
   const sectionRef = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.from(".goal-card", {
+ useGSAP(
+  () => {
+    const cards = gsap.utils.toArray(".goal-card");
+
+    gsap.fromTo(
+      cards,
+      {
         y: 60,
         opacity: 0,
-        duration: 1,
-        stagger: 0.25,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
         ease: "power3.out",
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "top 80%",
           toggleActions: "play none none none",
+          once: true,
         },
-      });
-    },
-    { scope: sectionRef },
-  );
+      }
+    );
+  },
+  { scope: sectionRef }
+);
+
+
 
   return (
     <section

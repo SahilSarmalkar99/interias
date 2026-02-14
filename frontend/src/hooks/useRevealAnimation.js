@@ -19,7 +19,7 @@ const useRevealAnimation = (ref) => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: section,
-          start: "top 50%",
+          start: "top 80%",
           toggleActions: "play none none none",
         },
       },
