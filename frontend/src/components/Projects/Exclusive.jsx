@@ -55,19 +55,19 @@ const Exclusive = () => {
                 onClick={() => navigate(`/project/${project.id}`)}
                 className="bg-[#F3F2EF] rounded-3xl p-4 cursor-pointer hover:scale-105 transition"
               >
-                <div className="rounded-2xl overflow-hidden mb-5">
+                <div className="rounded-2xl overflow-hidden mb-5 uppercase">
                   <img
                     src={project.image}
                     alt={project.clientName}
-                    className="w-full h-[260px] object-cover"
+                    className="w-full h-auto md:h-[400px] object-cover hover:scale-105 transition duration-500"
                   />
                 </div>
 
-                <h3 className="text-lg font-medium mb-1">
+                <h3 className="text-lg font-medium mb-1 uppercase">
                   {project.clientName}
                 </h3>
 
-                <p className="text-black/60 text-sm">
+                <p className="text-black/60 text-sm uppercase">
                   {project.location}
                 </p>
               </div>

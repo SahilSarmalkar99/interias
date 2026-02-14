@@ -8,6 +8,7 @@ import Contact from './pages/Contact.jsx'
 import {Routes ,Route} from "react-router-dom"
 import FloatingWhatsApp from './components/FloatingWhatsApp.jsx'
 import ProjectDetails from "./pages/ProjectDetails";
+import ProjectDetails2 from "./pages/ProjectDetails2";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/blogs' element={<Blogs/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path="/project/:id" element={<ProjectDetails />} />
+        <Route path="/project2/:id" element={<ProjectDetails2 />} />
 
       </Routes>
     </div>

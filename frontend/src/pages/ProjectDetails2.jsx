@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { projectsData } from "../data/projectsData";
+import { projectsData } from "../data/projectsData2";
 
-const ProjectDetails = () => {
+const ProjectDetails2 = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -61,4 +61,4 @@ const ProjectDetails = () => {
   );
 };
 
-export default ProjectDetails;
+export default ProjectDetails2;
