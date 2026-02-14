@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import img from "../../assets/display/bgg.png"
+import img from "../../assets/display/bg.png"
 
 const HeroImage = () => {
   const imgRef = useRef(null);
